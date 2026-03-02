@@ -9,15 +9,10 @@ public class AgingTimeObject : TimeObject, ITimeTravel
         sprite.color = nowColor;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TimeTravel(bool isPresent) //toggles presneted information
     {
-        
-    }
-
-    public void TimeTravel(bool isPresent)
-    {
-        if(isPresent == true)
+        //you can add extra conditions and variables incase you need to do something more complex
+        if (isPresent == true)
         {
             sprite.color = nowColor;
         }
