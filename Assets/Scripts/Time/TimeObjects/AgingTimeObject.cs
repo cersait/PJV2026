@@ -9,7 +9,7 @@ public class AgingTimeObject : TimeObject, ITimeTravel
         sprite.color = nowColor;
     }
 
-    public void TimeTravel(bool isPresent) //toggles presneted information
+    new public void TimeTravel(bool isPresent) //toggles presneted information
     {
         //you can add extra conditions and variables incase you need to do something more complex
         if (isPresent == true)
