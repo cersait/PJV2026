@@ -19,15 +19,15 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer); // Kolla om spelaren �r p� marken
         float moveDirection = Input.GetAxis("Horizontal");  // Kolla om vi r�r oss horisontellt
         Move(moveDirection); // Flytta spelaren
-        if (moveDirection > 0 && !isFacingRight) // Flippa spelaren s� den tittar i den riktningen som den r�r sig i
+        if (moveDirection > 0 && !isFacingRight)
         {
             Flip();
         }
-        else if (moveDirection < 0 && isFacingRight) // Flippa spelaren s� den tittar i den riktningen som den r�r sig i
+        else if (moveDirection < 0 && isFacingRight) 
         {
             Flip();
         }
-        if (Input.GetButtonDown("Jump") && isGrounded) // Om vi tycker p� space, s� l�t spelaren hoppa
+        if (Input.GetButtonDown("Jump") && isGrounded) // 
         {
             
             Jump();
@@ -35,12 +35,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move(float direction)
     {
-        Vector2 movement = new Vector2(direction * moveSpeed, rb.linearVelocity.y); // r�kna ut hur vi r�r oss i relation till spelarens velocity
+        Vector2 movement = new Vector2(direction * moveSpeed, rb.linearVelocity.y); // 
         rb.linearVelocity = movement;
     }
     private void Jump()
     {
-        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); // L�gg till vertical force f�r att kunna hoppa
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); // 
     }
     private void Flip()
     {
