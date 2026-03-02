@@ -1,18 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public bool hasKey = false;   // Example item
+    private List<string> items = new List<string>();
 
-    public void AddKey()
+    public void AddItem(string itemID)
     {
-        hasKey = true;
-        Debug.Log("Key collected!");
+        if (!items.Contains(itemID))
+        {
+            items.Add(itemID);
+            Debug.Log(itemID + " added.");
+        }
     }
 
-    public void UseKey()
+    public bool HasItem(string itemID)
     {
-        hasKey = false;
-        Debug.Log("Key used!");
+        return items.Contains(itemID);
+    }
+
+    public void RemoveItem(string itemID)
+    {
+        if (items.Contains(itemID))
+        {
+            items.Remove(itemID);
+        }
     }
 }

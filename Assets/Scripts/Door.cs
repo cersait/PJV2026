@@ -1,46 +1,28 @@
 using UnityEngine;
+using static Interfaces;
 
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable 
 {
-    private bool playerInRange = false;
-    private Inventory playerInventory;
+    public string requiredKeyID;  // Example: "RedKey"
 
-    private void Update()
+    public void Interact(GameObject interactor)
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        Inventory inventory = interactor.GetComponent<Inventory>();
+
+        if (inventory != null && inventory.HasItem(requiredKeyID))
         {
-            if (playerInventory != null && playerInventory.hasKey)
-            {
-                playerInventory.UseKey();
-                OpenDoor();
-            }
-            else
-            {
-                Debug.Log("You need a key!");
-            }
+            inventory.RemoveItem(requiredKeyID);
+            OpenDoor();
+        }
+        else
+        {
+            Debug.Log("You need the correct key!");
         }
     }
 
     private void OpenDoor()
     {
         Debug.Log("Door opened!");
-        gameObject.SetActive(false); // removes door
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
-            playerInventory = other.GetComponent<Inventory>();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-        }
+        gameObject.SetActive(false);
     }
 }

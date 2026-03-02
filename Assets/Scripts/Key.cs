@@ -1,18 +1,18 @@
 using UnityEngine;
+using static Interfaces;
 
-public class Key : MonoBehaviour
+public class Key : MonoBehaviour, IInteractable
 {
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Inventory inventory = other.GetComponent<Inventory>();
+    public string keyID;  
 
-            if (inventory != null)
-            {
-                inventory.AddKey();
-                Destroy(gameObject); // remove key from scene
-            }
+    public void Interact(GameObject interactor)
+    {
+        Inventory inventory = interactor.GetComponent<Inventory>();
+
+        if (inventory != null)
+        {
+            inventory.AddItem(keyID);
+            Destroy(gameObject);
         }
     }
 }

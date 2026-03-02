@@ -1,9 +1,10 @@
 using UnityEngine;
 using System;
+
 public class Interfaces
 {
-    public interface IInteractible
+    public interface IInteractable
     {
-        public void Interact();
+        void Interact(GameObject interactor);
     }
 }
