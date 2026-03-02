@@ -2,10 +2,13 @@ using UnityEngine;
 
 public interface ITimeTravel //every script that inherits from TimeObject should impliment this interface
 {
-    void TimeTravel(bool isPresent); //should toggle objects between past and present
+    public void TimeTravel(bool isPresent); //should toggle objects between past and present
 }
 
-public class TimeObject : MonoBehaviour
+public class TimeObject : MonoBehaviour, ITimeTravel
 {
-    [SerializeField] protected TimeController timeController;
+    public void TimeTravel(bool isPresent)
+    {
+        print($"{gameObject.name} sucsessfully time traveled");
+    }
 }
