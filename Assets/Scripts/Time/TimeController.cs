@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using static TimeObject;
 public class TimeController : MonoBehaviour
 {
     public bool isPresent = true;
     [SerializeField] TimeObject[] timeObjects;
+
+    [SerializeField] Volume v;
 
     public void ChangeTime() //toggles between the present and past
     {
