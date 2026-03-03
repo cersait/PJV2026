@@ -23,6 +23,6 @@ public class Door : MonoBehaviour, IInteractable
     private void OpenDoor()
     {
         Debug.Log("Door opened!");
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
