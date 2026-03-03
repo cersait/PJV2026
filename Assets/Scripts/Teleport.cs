@@ -9,7 +9,7 @@ public class Teleport : MonoBehaviour
     void Update()
     {
         // Vi kollar efter knapptryck varje bildruta, men bara om spelaren står i portalen
-        if (playerIsOverlapping && Input.GetKeyDown(KeyCode.F))
+        if (playerIsOverlapping && Input.GetKeyDown(KeyCode.T))
         {
             playerTransform.position = nextPortal.transform.position;
         }
