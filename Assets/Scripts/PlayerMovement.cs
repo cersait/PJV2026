@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [Header("Playermovement")]
     public float moveSpeed = 5f; // 
     public float jumpForce = 5f; // 
+    public float stamina = 100f;
     public Transform groundCheck; // 
     public float groundCheckRadius = 0.2f; // 
     public LayerMask groundLayer; // 
     private bool isFacingRight = true; 
     private bool isGrounded = false; 
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isFacingRight = !isFacingRight;  // Flippa player spriten horisontellt
         transform.Rotate(0f, 180f, 0f);
+    }
+    private void Run()
+    {
+        
     }
   
 }
