@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [Header("Playermovement")]
     public float moveSpeed = 5f; // 
     public float jumpForce = 5f; // 
     public Transform groundCheck; // 
@@ -9,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer; // 
     private bool isFacingRight = true; 
     private bool isGrounded = false; 
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
+    public float stamina = 100f;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

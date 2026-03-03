@@ -4,9 +4,14 @@ using static TimeObject;
 public class TimeController : MonoBehaviour
 {
     public bool isPresent = true;
-    [SerializeField] TimeObject[] timeObjects;
+    TimeObject[] timeObjects;
 
     [SerializeField] Volume v;
+
+    private void Start()
+    {
+        timeObjects = FindObjectsByType<TimeObject>(FindObjectsInactive.Include ,FindObjectsSortMode.InstanceID);
+    }
 
     public void ChangeTime() //toggles between the present and past
     {
