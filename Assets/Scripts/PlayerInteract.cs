@@ -3,15 +3,32 @@ using static Interfaces;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] KeyCode interactKey = KeyCode.F;
-    public IInteractable currentInteractible;
+    public IInteractable currentInteractable;
 
     // Update is called once per frame
     void Update()
     {
-        if(currentInteractible != null && Input.GetKeyDown(interactKey))
+        if(currentInteractable != null && Input.GetKeyDown(interactKey))
         {
-            currentInteractible.Interact(gameObject);
+            currentInteractable.Interact(gameObject);
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            currentInteractable = interactable;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null && interactable == currentInteractable)
+        {
+            currentInteractable = null;
         }
     }
 }

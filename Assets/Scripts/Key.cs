@@ -3,7 +3,7 @@ using static Interfaces;
 
 public class Key : MonoBehaviour, IInteractable
 {
-    public string keyID;  
+    [SerializeField] private string keyID;  
 
     public void Interact(GameObject interactor)
     {

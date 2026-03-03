@@ -829,6 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfaef6b1d601a24f94b1155eec94327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredKeyID: GateKey
 --- !u!1 &1679218781
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 1679218781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.23, y: -2.0274, z: 0}
+  m_LocalPosition: {x: 14.85, y: -2.0274, z: 0}
   m_LocalScale: {x: 1.2372, y: 1.0949, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -976,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaffc1e3f2ec62547b5eaf83a23878cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyID: GateKey
 --- !u!1 &2023629672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2752035612273950270, guid: 013c16b1d0603524a909587197007bd4, type: 3}
@@ -993,7 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466955d0c90289e4a8571f0199f46ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasKey: 0
 --- !u!1001 &6581406188571083392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1054,7 +1055,8 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Interfaces;
-public class ArmoredDoor : TimeObject, ITimeTravel, IInteractible
+public class ArmoredDoor : TimeObject, ITimeTravel, IInteractable
 {
     [SerializeField] Color presentColor, pastColor; //temp code
     //[SerializeField] Sprite presentSprite, pastSprite; cange later when needed sprites are avalible
@@ -31,7 +31,7 @@ public class ArmoredDoor : TimeObject, ITimeTravel, IInteractible
         }
     }
 
-    public void Interact()
+    public void Interact(GameObject interactor)
     {
         if(canProgess == true)
         {
@@ -43,7 +43,7 @@ public class ArmoredDoor : TimeObject, ITimeTravel, IInteractible
     {
         if (collision.gameObject.GetComponent<PlayerInteract>() != null)
         {
-            collision.gameObject.GetComponent<PlayerInteract>().currentInteractible = this;
+            collision.gameObject.GetComponent<PlayerInteract>().currentInteractable = this;
         }
     }
 
@@ -51,7 +51,7 @@ public class ArmoredDoor : TimeObject, ITimeTravel, IInteractible
     {
         if (collision.gameObject.GetComponent<PlayerInteract>() != null)
         {
-            collision.gameObject.GetComponent<PlayerInteract>().currentInteractible = null;
+            collision.gameObject.GetComponent<PlayerInteract>().currentInteractable = null;
         }
     }
 }
