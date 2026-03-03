@@ -8,3 +8,4 @@ public class Interfaces
         void Interact(GameObject interactor);
     }
 }
+
