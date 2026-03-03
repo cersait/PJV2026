@@ -4,36 +4,30 @@ using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
-    public List<Image> itemIcons = new List<Image>(); // Ändra till Image istället för GameObject
+    public List<Image> itemIcons = new List<Image>();
 
     void Start()
     {
         if (InventoryManager.Instance != null)
-            Refresh(InventoryManager.Instance.carriedItemSprites);
+            Refresh(InventoryManager.Instance.carriedItems);
     }
 
-    public void Refresh(List<Sprite> sprites)
+    public void Refresh(List<Item> items)
     {
-        // Säkerhetskoll 1: Har vi glömt dra in ikoner i Inspectorn?
-        if (itemIcons == null || itemIcons.Count == 0)
-        {
-            Debug.LogError("Du har inte dragit in några Images i InventoryUI på " + gameObject.name);
-            return;
-        }
-
         for (int i = 0; i < itemIcons.Count; i++)
         {
-            // Säkerhetskoll 2: Är en specifik slot i listan tom?
-            if (itemIcons[i] == null) continue;
-
-            if (i < sprites.Count)
+            if (i < items.Count)
             {
-                itemIcons[i].sprite = sprites[i];
                 itemIcons[i].gameObject.SetActive(true);
+                itemIcons[i].sprite = items[i].icon;
 
-                // Viktigt: Om du använder DragDropItem, se till att den också 
-                // vet vilken startposition den har nu när den aktiveras
-                itemIcons[i].GetComponent<CanvasGroup>().alpha = 1f;
+                // Pass the actual Item data to the Drag script
+                DragDropItem dragScript = itemIcons[i].GetComponent<DragDropItem>();
+                if (dragScript != null)
+                {
+                    dragScript.SetItem(items[i]);
+                    dragScript.ResetToHome();
+                }
             }
             else
             {
@@ -41,5 +35,4 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
-
 }

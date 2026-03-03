@@ -19,7 +19,20 @@ public class DoorManager : MonoBehaviour
 
     void OpenDoor()
     {
-        door.SetActive(false); // Eller kör en animation
         Debug.Log("Alla kugghjul på plats - Dörren öppnas!");
+        // Instead of SetActive(false), let's slide it up:
+        StartCoroutine(SlideDoor());
+    }
+
+    System.Collections.IEnumerator SlideDoor()
+    {
+        Vector3 openPosition = door.transform.position + new Vector3(0, 3, 0); // Moves up 3 units
+        float speed = 2f;
+
+        while (Vector3.Distance(door.transform.position, openPosition) > 0.01f)
+        {
+            door.transform.position = Vector3.MoveTowards(door.transform.position, openPosition, speed * Time.deltaTime);
+            yield return null;
+        }
     }
 }

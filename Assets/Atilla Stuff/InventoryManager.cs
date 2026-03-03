@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    public List<Sprite> carriedItemSprites = new List<Sprite>(); // Sparar bilderna
+    public List<Item> carriedItems = new List<Item>();
     public int maxSlots = 3;
 
     private void Awake()
@@ -13,26 +13,29 @@ public class InventoryManager : MonoBehaviour
         else { Destroy(gameObject); }
     }
 
-    public bool TryAddItem(Sprite itemSprite)
+    public bool TryAddItem(Item newItem)
     {
-        if (carriedItemSprites.Count < maxSlots)
+        if (carriedItems.Count < maxSlots)
         {
-            carriedItemSprites.Add(itemSprite); // Spara bilden
+            carriedItems.Add(newItem);
             UpdateUIInScene();
             return true;
         }
         return false;
     }
 
-    public void RemoveItem(Sprite itemSprite)
+    public void RemoveItem(Item itemToRemove)
     {
-        carriedItemSprites.Remove(itemSprite); // Ta bort just denna bild
-        UpdateUIInScene();
+        if (carriedItems.Contains(itemToRemove))
+        {
+            carriedItems.Remove(itemToRemove);
+            UpdateUIInScene();
+        }
     }
 
     public void UpdateUIInScene()
     {
         InventoryUI currentUI = Object.FindFirstObjectByType<InventoryUI>();
-        if (currentUI != null) currentUI.Refresh(carriedItemSprites);
+        if (currentUI != null) currentUI.Refresh(carriedItems);
     }
 }

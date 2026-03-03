@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 startPos;
+    private Item currentItem; // The specific data for the item in this slot
 
     void Awake()
     {
@@ -14,19 +16,24 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         startPos = rectTransform.anchoredPosition;
     }
 
+    public void SetItem(Item newItem)
+    {
+        this.currentItem = newItem; 
+    }
+
+    public void ResetToHome() => rectTransform.anchoredPosition = startPos;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false; // Tillåter oss att "se" världen bakom ikonen
+        canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = 0.6f;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Följ muspekaren
         rectTransform.anchoredPosition += eventData.delta / GetComponentInParent<Canvas>().scaleFactor;
     }
 
-    //här under vi kan lägga grejer i andra
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
@@ -34,29 +41,19 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
 
-        if (hitObject != null && hitObject.CompareTag("Maskin"))
+        if (hitObject != null)
         {
-            // Vi sparar svaret från maskinen i en variabel (success)
             ItemSocket socket = hitObject.GetComponent<ItemSocket>();
-            bool success = socket.Activate(this.gameObject);
-
-            // Om maskinen sa nej (redan använd), skicka tillbaka ikonen
-            if (success == false)
+            if (socket != null && currentItem != null)
             {
-                rectTransform.anchoredPosition = startPos;
-            }
-
-            if (success == true)
-            {
-                socket.Activate(this.gameObject);
-                rectTransform.anchoredPosition = startPos;
+                // Try to activate the socket with this item's data
+                if (socket.Activate(currentItem))
+                {
+                    // If successful, the UI Refresh will handle hiding the slot
+                    return;
+                }
             }
         }
-        else
-        {
-            // Om vi släppte utanför en maskin, åk tillbaka
-            rectTransform.anchoredPosition = startPos;
-        }
+        ResetToHome();
     }
-
 }

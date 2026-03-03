@@ -2,38 +2,31 @@ using UnityEngine;
 
 public class PickupToUI : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    // Drag your Item ScriptableObject (Cogwheel or Key) here in the Inspector
+    public Item itemData;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Något nuddade kugghjulet: " + other.name);
-
+        // 1. Check if it's the player
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Spelaren nuddade! Försöker lägga till i Inventory...");
-
-            if (InventoryManager.Instance != null)
+            if (InventoryManager.Instance != null && itemData != null)
             {
-                Sprite mySprite = GetComponent<SpriteRenderer>().sprite;
-                if (InventoryManager.Instance.TryAddItem(mySprite))
+                // 2. Try to add the WHOLE Item object, not just a sprite
+                if (InventoryManager.Instance.TryAddItem(itemData))
                 {
-                    Destroy(gameObject);
+                    Debug.Log(itemData.itemName + " picked up!");
+                    Destroy(gameObject); // Remove the item from the 3D/2D world
                 }
                 else
                 {
-                    Debug.LogWarning("Inventoryt är fullt!");
+                    Debug.LogWarning("Inventory is full!");
                 }
             }
-            else
+            else if (itemData == null)
             {
-                Debug.LogError("Hittade ingen InventoryManager i scenen!");
+                Debug.LogError("No Item Data assigned to " + gameObject.name);
             }
         }
     }
-
 }

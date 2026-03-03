@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class ItemSocket : MonoBehaviour
 {
-    public GameObject visualGear;
-    private bool isActivated = false;
-    private DoorManager doorManager;
+    public ItemType requiredType;
+    public DoorManager doorManager;
+    public GameObject visualGear; // The 3D model that appears when placed
+    private bool isFilled = false;
 
-    void Start()
+    public bool Activate(Item incomingItem)
     {
-        doorManager = Object.FindFirstObjectByType<DoorManager>();
-    }
+        if (isFilled) return false;
 
-    // Ändrad till 'bool' för att kunna svara drag-scriptet
-    public bool Activate(GameObject uiIcon)
-    {
-        if (isActivated)
+        if (incomingItem.type == requiredType)
         {
-            //Debug.Log("Denna maskin har redan ett kugghjul!");
-            return false; // Säg nej till drag-scriptet
+            isFilled = true;
+
+            if (visualGear != null) visualGear.SetActive(true);
+
+            InventoryManager.Instance.RemoveItem(incomingItem);
+
+            if (doorManager != null) doorManager.GearPlaced();
+
+            return true;
         }
-
-        isActivated = true;
-        uiIcon.SetActive(false);
-        if (visualGear != null) visualGear.SetActive(true);
-
-        if (doorManager != null) doorManager.GearPlaced();
-
-        return true; // Säg ja, föremålet användes!
+        return false;
     }
 }
