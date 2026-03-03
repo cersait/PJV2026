@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody2D>(); // H�mta v�r Rigidbody 2D
     }
     private void Update()
