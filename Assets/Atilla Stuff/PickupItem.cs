@@ -1,30 +1,31 @@
 using UnityEngine;
 
-public class PickupToUI : MonoBehaviour
+public class PickupItem : MonoBehaviour
 {
-    private InventoryManager inventory;
-
-    void Start()
-    {
-        // Hitta inventory-scriptet i scenen
-        inventory = Object.FindFirstObjectByType<InventoryManager>();
-    }
+    private bool isCarried = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isCarried)
         {
-            // Försök lägga till i inventory
-            if (inventory != null && inventory.TryAddItem())
+            Transform holdPoint = other.transform.Find("HoldPoint");
+            if (holdPoint != null)
             {
-                // Om det fanns plats: Ta bort från marken
-                Destroy(gameObject);
-            }
-            else
-            {
-                // Om det var fullt: Gör inget (eller visa ett meddelande)
-                Debug.Log("Kan inte plocka upp, inventoryt är fullt!");
+                Carry(holdPoint);
             }
         }
+    }
+
+    void Carry(Transform target)
+    {
+        isCarried = true;
+        transform.SetParent(target);
+        transform.localPosition = Vector3.zero;
+
+        // Modern fysik-hantering (ersätter isKinematic = true)
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
+
+        GetComponent<Collider2D>().enabled = false;
     }
 }

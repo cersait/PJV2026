@@ -3,23 +3,36 @@ using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
-    // En lista med de 3 ikonerna i ditt UI
-    public List<GameObject> itemIcons = new List<GameObject>();
+    public static InventoryManager Instance;
+    public List<Sprite> carriedItemSprites = new List<Sprite>(); // Sparar bilderna
+    public int maxSlots = 3;
 
-    public bool TryAddItem()
+    private void Awake()
     {
-        // Gå igenom alla slots och hitta den första som är ledig (inactive)
-        foreach (GameObject icon in itemIcons)
-        {
-            if (!icon.activeSelf)
-            {
-                icon.SetActive(true);
-                Debug.Log("Föremål tillagt i en ledig slot!");
-                return true; // Lyckades lägga till!
-            }
-        }
+        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
+        else { Destroy(gameObject); }
+    }
 
-        Debug.Log("Inventoryt är fullt!");
-        return false; // Misslyckades (fullt)
+    public bool TryAddItem(Sprite itemSprite)
+    {
+        if (carriedItemSprites.Count < maxSlots)
+        {
+            carriedItemSprites.Add(itemSprite); // Spara bilden
+            UpdateUIInScene();
+            return true;
+        }
+        return false;
+    }
+
+    public void RemoveItem(Sprite itemSprite)
+    {
+        carriedItemSprites.Remove(itemSprite); // Ta bort just denna bild
+        UpdateUIInScene();
+    }
+
+    public void UpdateUIInScene()
+    {
+        InventoryUI currentUI = Object.FindFirstObjectByType<InventoryUI>();
+        if (currentUI != null) currentUI.Refresh(carriedItemSprites);
     }
 }
