@@ -4,7 +4,7 @@ using static TimeObject;
 public class TimeController : MonoBehaviour
 {
     public bool isPresent = true;
-    TimeObject[] timeObjects;
+    [SerializeField] TimeObject[] timeObjects;
 
     [SerializeField] Volume v;
 

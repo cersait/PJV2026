@@ -383,8 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPresent: 1
-  timeObjects:
-  - {fileID: 1391913539}
   v: {fileID: 0}
 --- !u!4 &1250275043
 Transform:
@@ -434,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   presentColor: {r: 0, g: 0, b: 0, a: 1}
   pastColor: {r: 1, g: 1, b: 1, a: 1}
-  nextLevel: 1
+  nextLevel: 2
 --- !u!212 &1391913540
 SpriteRenderer:
   m_ObjectHideFlags: 0
