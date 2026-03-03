@@ -1,9 +1,9 @@
 using UnityEngine;
 using static Interfaces;
 
-public class Key : MonoBehaviour, IInteractable
+public class ItemPickup : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string keyID;  
+    [SerializeField] private string itemID;
 
     public void Interact(GameObject interactor)
     {
@@ -11,7 +11,7 @@ public class Key : MonoBehaviour, IInteractable
 
         if (inventory != null)
         {
-            inventory.AddItem(keyID);
+            inventory.AddItem(itemID);
             Destroy(gameObject);
         }
     }
