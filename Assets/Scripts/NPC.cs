@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using static Interfaces;
+using System.Collections;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -21,17 +22,17 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (dialogueData == null  && !isDialogueActive)
+        if (dialogueData == null || PauseMenu.isPaused  && !isDialogueActive)
         {
             return;
         }
         if (isDialogueActive)
         {
-
+            nextLine();
         }
         else
         {
-
+            StartDialogue();
         }
     }
 
@@ -49,7 +50,55 @@ public class NPC : MonoBehaviour, IInteractable
         portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
+        PauseMenu.npcPause();
 
+        StartCoroutine(TypeLine()); 
+    }
+
+    void nextLine()
+    {
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+        }
+        else if (dialogueIndex + 1 < dialogueData.dialogueLines.Length)
+        {
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+
+    IEnumerator TypeLine()
+    {
+        isTyping = true;
+        dialogueText.SetText("");
+        foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(dialogueData.typingSpeed);
+        }
+
+        isTyping = false;
+
+        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
+        {
+            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            nextLine();
+        }
+    }
+
+    public void EndDialogue()
+    {
+        StopAllCoroutines();
+        isDialogueActive = false;
+        dialogueText.SetText("");
+        dialoguePanel.SetActive(false);
+        PauseMenu.npcUnpause();
     }
     
 }

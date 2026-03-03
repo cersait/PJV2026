@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-                Resume();
+                Resume(); 
             else
                 Pause();
         }
@@ -35,5 +35,15 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Game Quit"); // only works in build
+    }
+
+    public static void npcPause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public static void npcUnpause()
+    {
+        Time.timeScale = 1f;
     }
 }
