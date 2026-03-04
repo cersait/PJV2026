@@ -11157,6 +11157,37 @@ MonoBehaviour:
   oldColor: {r: 1, g: 1, b: 1, a: 1}
   presentSprite: {fileID: 697874993771656122, guid: 79188a3fdfd588242872c3c2851e4a6f, type: 3}
   pastSprite: {fileID: 4260234683958774436, guid: 490f585b810a75041af9c14f2a0a0420, type: 3}
+--- !u!1 &1123900564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123900565}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1123900565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123900564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -65.82129, y: -14.683592, z: -0.37835723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127115023
 GameObject:
   m_ObjectHideFlags: 0
@@ -21491,3 +21522,4 @@ SceneRoots:
   - {fileID: 1819971155}
   - {fileID: 1149747003}
   - {fileID: 1350943327}
+  - {fileID: 1123900565}
