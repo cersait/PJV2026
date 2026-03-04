@@ -39,6 +39,7 @@ public class TimeController : MonoBehaviour
         for (int i = 0; i < timeObjects.Length; i++)
         {
             ITimeTravel timeTravelelingObject = timeObjects[i]; //saves current time object as an ITimeTravel interface
+            print($"{timeObjects[i].name}");
             timeTravelelingObject.TimeTravel(isPresent); //call the objects TimeTravel function
         }
         GFXeffectCooldown = GFXeffectCooldownReset;

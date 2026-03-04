@@ -20,6 +20,31 @@ public class AgingTimeObject : TimeObject, ITimeTravel
             renderer.sprite = presentSprite;
         }
         
+        if(renderer == null)
+        {
+            print($"{gameObject.name}... WHY DO YOU NOT HAVE A RENDERER");
+        }
+
+        if(presentSprite == null)
+        {
+            print($"{gameObject.name} has no present sprite");
+        }
+
+
+        if(pastSprite == null)
+        {
+            print($"{gameObject.name} has no past sprite");
+        }
+
+        if(oldColor == null)
+        {
+            print($"{gameObject.name} has no old color");
+        }
+
+        if(nowColor == null)
+        {
+            print($"{gameObject.name} has no now color");
+        }
     }
 
     new public void TimeTravel(bool isPresent) //toggles presneted information
