@@ -94,7 +94,7 @@ public class NPC : MonoBehaviour, IInteractable
         // Do NOT auto-close; wait for player to press F
     }
 
-    private void EndDialogue()
+    public  void EndDialogue()
     {
         StopAllCoroutines();
         dialogueText.SetText("");
