@@ -508,25 +508,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2264034722150534601, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
-      propertyPath: weight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5951417038911273288, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
       propertyPath: m_Name
       value: Time Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
