@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Battery
   icon: {fileID: 5856981904466133357, guid: b97a5705609d5c443a6fbbe88f8a6ade, type: 3}
-  worldPrefab: {fileID: 0}
-  type: 3
+  type: 4

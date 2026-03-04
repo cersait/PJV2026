@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    public int gearsRequired = 3;
+    public int gearsRequired;
     private int gearsPlaced = 0;
     public GameObject door;
 
