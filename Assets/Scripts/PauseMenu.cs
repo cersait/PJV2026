@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-
+    public static bool isInDialogue = false;
     [SerializeField] private GameObject pauseMenuUI;
 
     void Update()
@@ -37,13 +37,5 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Game Quit"); // only works in build
     }
 
-    public static void npcPause()
-    {
-        Time.timeScale = 0f;
-    }
-
-    public static void npcUnpause()
-    {
-        Time.timeScale = 1f;
-    }
+    
 }

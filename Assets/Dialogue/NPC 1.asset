@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f558de0f49ebd142937cce46160c2dc, type: 3}
-  m_Name: npc1
+  m_Name: NPC 1
   m_EditorClassIdentifier: 
-  npcName: 
-  npcPortrait: {fileID: 0}
-  dialogueLins:
-  - 'It seems you are looking for something, but you wil be tested to prove wether
-    you deserve to have it or not '
-  - As a wise man once said, If you want it you will have to come get it.
+  npcName: Bob
+  npcPortrait: {fileID: 7721810992165795323, guid: 79f775da663d0c3458a6a92ec4609fac, type: 3}
+  dialogueLines:
+  - All these voices inside my head
+  - Blinding my sight through the curtain of red
   autoProgressLines: 0101
-  autoProgressDelay: 1.5
-  typingSpeed: 0.05
+  autoProgressDelay: 1
+  typingSpeed: 0.02

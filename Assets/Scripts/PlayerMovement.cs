@@ -21,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+
+        if (PauseMenu.isPaused || PauseMenu.isInDialogue)
+            return;
+
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer); // Kolla om spelaren �r p� marken
         float moveDirection = Input.GetAxis("Horizontal");  // Kolla om vi r�r oss horisontellt
         Move(moveDirection); // Flytta spelaren
@@ -37,7 +42,14 @@ public class PlayerMovement : MonoBehaviour
             
             Jump();
         }
+      
     }
+
+    public void StopMovement()
+    {
+        rb.linearVelocity = Vector2.zero; // stop all current movement
+    }
+
     private void Move(float direction)
     {
         Vector2 movement = new Vector2(direction * moveSpeed, rb.linearVelocity.y); // 

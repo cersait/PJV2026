@@ -12,8 +12,4 @@ public class NPCDialogue : ScriptableObject
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
    
-
-
-
-
 }
