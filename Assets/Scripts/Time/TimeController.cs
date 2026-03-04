@@ -10,6 +10,8 @@ public class TimeController : MonoBehaviour
     [SerializeField] float GFXeffectCooldown = 0.5f;
     float GFXeffectCooldownReset;
 
+    [SerializeField] AudioSource radioStatic;
+
     private void Start()
     {
         timeObjects = FindObjectsByType<TimeObject>(FindObjectsInactive.Include ,FindObjectsSortMode.InstanceID);
@@ -19,12 +21,13 @@ public class TimeController : MonoBehaviour
 
     private void Update()
     {
-        v.weight = GFXeffectCooldown;
+        v.weight = GFXeffectCooldown / GFXeffectCooldownReset;
+        radioStatic.volume = GFXeffectCooldown / GFXeffectCooldownReset;
         if(GFXeffectCooldown > 0)
         {
             GFXeffectCooldown -= Time.deltaTime;
         }
-        else if(GFXeffectCooldown < 0)
+        else
         {
             GFXeffectCooldown = 0;
         }
@@ -39,5 +42,9 @@ public class TimeController : MonoBehaviour
             timeTravelelingObject.TimeTravel(isPresent); //call the objects TimeTravel function
         }
         GFXeffectCooldown = GFXeffectCooldownReset;
+        if(radioStatic != null)
+        {
+            radioStatic.Play();
+        }
     }
 }
