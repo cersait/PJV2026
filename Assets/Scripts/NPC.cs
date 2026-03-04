@@ -1,8 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using static Interfaces;
 using System.Collections;
+using static Interfaces;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -11,94 +11,95 @@ public class NPC : MonoBehaviour, IInteractable
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
 
-    private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    private int dialogueIndex = 0;
+    private bool isTyping = false;
+    private bool isDialogueActive = false;
+    private Coroutine typingCoroutine;
 
-
-    public bool CanInteract()
-    {
-        return !isDialogueActive;
-    }
-
-    public void Interact()
-    {
-        if (dialogueData == null || PauseMenu.isPaused  && !isDialogueActive)
-        {
-            return;
-        }
-        if (isDialogueActive)
-        {
-            nextLine();
-        }
-        else
-        {
-            StartDialogue();
-        }
-    }
+    public bool CanInteract() => !isDialogueActive;
 
     public void Interact(GameObject interactor)
     {
-        throw new System.NotImplementedException();
+        if (dialogueData == null) return;
+
+        if (!isDialogueActive)
+        {
+            // First press: start dialogue
+            StartDialogue(interactor);
+            return;
+        }
+
+        // If typing, finish current line immediately
+        if (isTyping)
+        {
+            StopCoroutine(typingCoroutine);
+            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
+            isTyping = false;
+
+            // If this is the last line, close dialogue immediately
+            if (dialogueIndex == dialogueData.dialogueLines.Length - 1)
+            {
+                EndDialogue();
+            }
+
+            return;
+        }
+
+        // Not typing: move to next line
+        dialogueIndex++;
+
+        // Check if we've reached the end
+        if (dialogueIndex >= dialogueData.dialogueLines.Length)
+        {
+            EndDialogue();
+        }
+        else
+        {
+            typingCoroutine = StartCoroutine(TypeLine());
+        }
     }
 
-    void StartDialogue()
+    private void StartDialogue(GameObject interactor)
     {
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.name);
+        // Show NPC info
+        nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
-
         dialoguePanel.SetActive(true);
-        PauseMenu.npcPause();
+        PauseMenu.isInDialogue = true;
 
-        StartCoroutine(TypeLine()); 
+        // Stop player immediately
+        PlayerMovement player = interactor.GetComponent<PlayerMovement>();
+        if (player != null) player.StopMovement();
+
+        // Start typing first line
+        typingCoroutine = StartCoroutine(TypeLine());
     }
 
-    void nextLine()
-    {
-        if (isTyping)
-        {
-            StopAllCoroutines();
-            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
-            isTyping = false;
-        }
-        else if (dialogueIndex + 1 < dialogueData.dialogueLines.Length)
-        {
-            StartCoroutine(TypeLine());
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
-
-    IEnumerator TypeLine()
+    private IEnumerator TypeLine()
     {
         isTyping = true;
         dialogueText.SetText("");
-        foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
+
+        string line = dialogueData.dialogueLines[dialogueIndex];
+        foreach (char letter in line)
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(dialogueData.typingSpeed);
+            yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
         }
 
         isTyping = false;
-
-        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
-        {
-            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
-            nextLine();
-        }
+        // Do NOT auto-close; wait for player to press F
     }
 
-    public void EndDialogue()
+    private void EndDialogue()
     {
         StopAllCoroutines();
-        isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        PauseMenu.npcUnpause();
+        isDialogueActive = false;
+        PauseMenu.isInDialogue = false;
     }
-    
 }

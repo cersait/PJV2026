@@ -531,8 +531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.4799805, y: 1.4801025}
-  m_SizeDelta: {x: 17.7609, y: 17.7609}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305335666
 MonoBehaviour:
@@ -608,8 +608,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 12.74}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &337533701
 MonoBehaviour:
@@ -796,7 +796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -102.58}
+  m_AnchoredPosition: {x: 0, y: -140.65}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &459240945
@@ -917,7 +917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &703646018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -938,7 +938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 199}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703646019
@@ -1230,10 +1230,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1443426266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029140354
 MonoBehaviour:
@@ -1336,11 +1336,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029140352}
   m_CullTransparentMesh: 1
---- !u!1 &1047316341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2752035612273950270, guid: 013c16b1d0603524a909587197007bd4, type: 3}
-  m_PrefabInstance: {fileID: 351927637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081167561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223a51878eb6c9d4f9045442ef529200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 1047316341}
 --- !u!1 &1382056648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,7 +1958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6542ef51bef586440ba1a3939d264e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 0}
+  dialogueData: {fileID: 11400000, guid: fbda9c25a6b9f2b479d8e7c9096f517c, type: 2}
   dialoguePanel: {fileID: 703646017}
   dialogueText: {fileID: 2050285556}
   nameText: {fileID: 1889639346}
@@ -2154,8 +2148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -74}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -75.28}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443426267
 MonoBehaviour:
@@ -2894,10 +2888,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 337533700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955510386
 MonoBehaviour:
@@ -3065,7 +3059,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Scooby doo
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

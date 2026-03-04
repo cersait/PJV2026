@@ -9,7 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Script: {fileID: 11500000, guid: 6f558de0f49ebd142937cce46160c2dc, type: 3}
+  m_Name: ThePastDude
   m_EditorClassIdentifier: 
-  components: []
+  npcName: 
+  npcPortrait: {fileID: 0}
+  dialogueLines:
+  - 
+  - 
+  - 
+  autoProgressLines: 
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05

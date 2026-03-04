@@ -4,6 +4,4 @@ public class GameManager : MonoBehaviour
 {
 
     
-
-    
 }
