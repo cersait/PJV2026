@@ -17,6 +17,6 @@ MonoBehaviour:
   dialogueLines:
   - All these voices inside my head
   - Blinding my sight through the curtain of red
-  autoProgressLines: 0101
-  autoProgressDelay: 1
+  autoProgressLines: 
+  autoProgressDelay: 0
   typingSpeed: 0.02
