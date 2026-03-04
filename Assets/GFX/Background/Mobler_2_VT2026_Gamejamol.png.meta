@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5729efad528d67c49ada90575021ca65
+guid: c3d659de1114fb44eac2ad2319d22705
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7464110099692097173
-    second: Mobler_2_VT2026_Gamejamo_0
+      213: -496668328987262107
+    second: Mobler_2_VT2026_Gamejamol_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mobler_2_VT2026_Gamejamo_0
+      name: Mobler_2_VT2026_Gamejamol_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 667
-        height: 667
+        x: 139
+        y: 209
+        width: 386
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59e8d80d698d59760800000000000000
-      internalID: 7464110099692097173
+      spriteID: 563078749ca7b19f0800000000000000
+      internalID: -496668328987262107
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mobler_2_VT2026_Gamejamo_0: 7464110099692097173
+      Mobler_2_VT2026_Gamejamol_0: -496668328987262107
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
