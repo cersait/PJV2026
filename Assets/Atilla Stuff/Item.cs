@@ -1,5 +1,5 @@
 using UnityEngine;
-public enum ItemType { Key, Cogwheel, Battery }
+public enum ItemType { PresentKey, PastKey, Cogwheel, Battery }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject

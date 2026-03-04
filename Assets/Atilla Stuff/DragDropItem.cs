@@ -47,11 +47,22 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             if (socket != null && currentItem != null)
             {
                 // Try to activate the socket with this item's data
-                if (socket.Activate(currentItem))
+                if (socket.ActivateCog(currentItem))
                 {
                     // If successful, the UI Refresh will handle hiding the slot
                     return;
                 }
+
+            }
+
+            ItemSwitch witch = hitObject.GetComponent<ItemSwitch>();
+            if (witch != null && currentItem != null)
+            {
+                if (witch.ActivateConvert(currentItem))
+                {
+                    return;
+                }
+
             }
         }
         ResetToHome();

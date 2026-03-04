@@ -7,7 +7,7 @@ public class ItemSocket : MonoBehaviour
     public GameObject visualGear; // The 3D model that appears when placed
     private bool isFilled = false;
 
-    public bool Activate(Item incomingItem)
+    public bool ActivateCog(Item incomingItem)
     {
         if (isFilled) return false;
 
