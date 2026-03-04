@@ -52,17 +52,14 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                     // If successful, the UI Refresh will handle hiding the slot
                     return;
                 }
-
-            }
-
-            ItemSwitch witch = hitObject.GetComponent<ItemSwitch>();
-            if (witch != null && currentItem != null)
-            {
-                if (witch.ActivateConvert(currentItem))
+                if (socket.ActivateConvert(currentItem))
                 {
                     return;
                 }
-
+                if (socket.ActivateKey(currentItem))
+                {
+                    return;
+                }
             }
         }
         ResetToHome();

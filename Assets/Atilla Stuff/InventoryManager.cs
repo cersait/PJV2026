@@ -9,8 +9,6 @@ public class InventoryManager : MonoBehaviour
 
     public Item presentKeyTemplate;
     public Item pastKeyTemplate;
-
-    public GameObject prefabToSpawn;
     private void Awake()
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
@@ -55,17 +53,7 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("Oldkey -> Key");
         }
 
-
         UpdateUIInScene();
-    }
-    public void DropItem(Item item)
-    {
-        if (carriedItems.Contains(item))
-        {
-            carriedItems.Remove(item);
-
-            UpdateUIInScene();
-        }
     }
 
     public void UpdateUIInScene()
