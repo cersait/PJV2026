@@ -7,6 +7,10 @@ public class InventoryManager : MonoBehaviour
     public List<Item> carriedItems = new List<Item>();
     public int maxSlots = 3;
 
+    public Item presentKeyTemplate;
+    public Item pastKeyTemplate;
+
+    public GameObject prefabToSpawn;
     private void Awake()
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
@@ -29,6 +33,37 @@ public class InventoryManager : MonoBehaviour
         if (carriedItems.Contains(itemToRemove))
         {
             carriedItems.Remove(itemToRemove);
+            UpdateUIInScene();
+        }
+    }
+
+    public void Convert(Item itemToConvert)
+    {
+        int index = carriedItems.IndexOf(itemToConvert);
+
+        // If the item isn't in our inventory, we can't convert it
+        if (index == -1) return;
+
+        if (itemToConvert.type == ItemType.PresentKey)
+        {
+            carriedItems[index] = pastKeyTemplate;
+            Debug.Log("Key -> Oldkey");
+        }
+        else if (itemToConvert.type == ItemType.PastKey)
+        {
+            carriedItems[index] = presentKeyTemplate;
+            Debug.Log("Oldkey -> Key");
+        }
+
+
+        UpdateUIInScene();
+    }
+    public void DropItem(Item item)
+    {
+        if (carriedItems.Contains(item))
+        {
+            carriedItems.Remove(item);
+
             UpdateUIInScene();
         }
     }
