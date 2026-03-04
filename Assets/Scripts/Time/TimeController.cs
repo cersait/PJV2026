@@ -7,10 +7,27 @@ public class TimeController : MonoBehaviour
     [SerializeField] TimeObject[] timeObjects;
 
     [SerializeField] Volume v;
+    [SerializeField] float GFXeffectCooldown = 0.5f;
+    float GFXeffectCooldownReset;
 
     private void Start()
     {
         timeObjects = FindObjectsByType<TimeObject>(FindObjectsInactive.Include ,FindObjectsSortMode.InstanceID);
+        GFXeffectCooldownReset = GFXeffectCooldown;
+        GFXeffectCooldown = 0;
+    }
+
+    private void Update()
+    {
+        v.weight = GFXeffectCooldown;
+        if(GFXeffectCooldown > 0)
+        {
+            GFXeffectCooldown -= Time.deltaTime;
+        }
+        else if(GFXeffectCooldown < 0)
+        {
+            GFXeffectCooldown = 0;
+        }
     }
 
     public void ChangeTime() //toggles between the present and past
@@ -21,5 +38,6 @@ public class TimeController : MonoBehaviour
             ITimeTravel timeTravelelingObject = timeObjects[i]; //saves current time object as an ITimeTravel interface
             timeTravelelingObject.TimeTravel(isPresent); //call the objects TimeTravel function
         }
+        GFXeffectCooldown = GFXeffectCooldownReset;
     }
 }
