@@ -516,6 +516,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385239391858978229, guid: 47f05fe514cddb148874d181a5c93ba8, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

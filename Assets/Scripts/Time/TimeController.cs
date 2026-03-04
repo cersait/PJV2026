@@ -42,9 +42,5 @@ public class TimeController : MonoBehaviour
             timeTravelelingObject.TimeTravel(isPresent); //call the objects TimeTravel function
         }
         GFXeffectCooldown = GFXeffectCooldownReset;
-        if(radioStatic != null)
-        {
-            radioStatic.Play();
-        }
     }
 }
