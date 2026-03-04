@@ -19,13 +19,14 @@ public class NPC : MonoBehaviour, IInteractable
     {
         return !isDialogueActive;
     }
+   
+   
 
-    public void Interact()
+    public void Interact(GameObject interactor)
     {
-        if (dialogueData == null || PauseMenu.isPaused  && !isDialogueActive)
-        {
+        if (dialogueData == null)
             return;
-        }
+
         if (isDialogueActive)
         {
             nextLine();
@@ -36,23 +37,25 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact(GameObject interactor)
-    {
-        throw new System.NotImplementedException();
-    }
-
     void StartDialogue()
     {
+        Debug.Log("START DIALOGUE RUNNING");
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.name);
+        nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
-        PauseMenu.npcPause();
+        PauseMenu.isInDialogue = true;
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
 
-        StartCoroutine(TypeLine()); 
+        if (player != null)
+        {
+            player.StopMovement();
+        }
+
+        StartCoroutine(TypeLine());
     }
 
     void nextLine()
@@ -63,13 +66,13 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
-        else if (dialogueIndex + 1 < dialogueData.dialogueLines.Length)
-        {
-            StartCoroutine(TypeLine());
-        }
         else
         {
-            EndDialogue();
+            dialogueIndex++;
+            if (dialogueIndex < dialogueData.dialogueLines.Length)
+                StartCoroutine(TypeLine());
+            else
+                EndDialogue();
         }
     }
 
@@ -80,14 +83,14 @@ public class NPC : MonoBehaviour, IInteractable
         foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(dialogueData.typingSpeed);
+            yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
         }
 
         isTyping = false;
 
         if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
-            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            yield return new WaitForSecondsRealtime(dialogueData.autoProgressDelay);
             nextLine();
         }
     }
@@ -98,7 +101,7 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        PauseMenu.npcUnpause();
+        PauseMenu.isInDialogue = false;
     }
     
 }

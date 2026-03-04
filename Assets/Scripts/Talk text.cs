@@ -3,7 +3,7 @@ using TMPro;
 using Unity.Collections;
 using System.Collections;
 using UnityEngine.UI;
-public class Talktext : MonoBehaviour
+public class Talk_text : MonoBehaviour
 {
     public TextMeshProUGUI tmp;
     public string[] lines;
