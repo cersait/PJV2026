@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 79f775da663d0c3458a6a92ec4609fac
+guid: d67dd733a0910d848b43c55fcfa61d9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7721810992165795323
-    second: Player_Character_Idle_right_0
+      213: 5790280965329917790
+    second: Player_Character_jump_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Character_Idle_right_0
+      name: Player_Character_jump_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 50
-        width: 139
-        height: 300
+        x: 132
+        y: 63
+        width: 138
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf5bfba7f22692b60800000000000000
-      internalID: 7721810992165795323
+      spriteID: e5712381cd53b5050800000000000000
+      internalID: 5790280965329917790
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player_Character_Idle_right_0: 7721810992165795323
+      Player_Character_jump_0: 5790280965329917790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

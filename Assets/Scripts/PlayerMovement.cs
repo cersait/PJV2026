@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    // Aiden
     [Header("Playermovement")]
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
@@ -12,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool isGrounded = false;
     private Rigidbody2D rb;
+
+    public Animator animator; 
 
     private void Start()
     {
@@ -39,6 +43,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
             Jump();
+
+        //animation
+        animator.SetBool("IsGrounded", isGrounded);
+
+        if (rb.linearVelocityY < 0)
+            animator.SetBool("IsFalling", true);
+        else
+            animator.SetBool("IsFalling", false);
+
+        if (moveDirection != 0)
+            animator.SetBool("IsMoving", true);
+        else
+            animator.SetBool("IsMoving", false);
     }
 
     private void Move(float direction)
