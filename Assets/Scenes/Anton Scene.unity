@@ -1877,6 +1877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredKeyID: Key
+  teleportPoint: {fileID: 0}
+  door: {fileID: 0}
 --- !u!1 &409912892
 GameObject:
   m_ObjectHideFlags: 0
@@ -10622,6 +10624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredKeyID: Key
+  teleportPoint: {fileID: 0}
+  door: {fileID: 0}
 --- !u!61 &2011551201
 BoxCollider2D:
   m_ObjectHideFlags: 0
