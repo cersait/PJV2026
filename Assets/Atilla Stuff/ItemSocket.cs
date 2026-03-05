@@ -18,6 +18,8 @@ public class ItemSocket : MonoBehaviour
 
     public bool ActivateCog(Item incomingItem)
     {
+        Debug.Log("gear");
+
         if (isFilled) return false;
 
         if (incomingItem.type == requiredTypeCog)
