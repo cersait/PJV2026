@@ -14,7 +14,12 @@ public class ItemSocket : MonoBehaviour
 
     [Header("Insta Door")]
     public ItemType requiredTypeKey;
-    public GameObject DoorKey;
+    public GameObject Door;
+
+    [Header("Moving Object")]
+    public ItemType requiredTypeBattery;
+    public MovingPlatform MoveObject;
+    public GameObject anchor;
 
     public bool ActivateCog(Item incomingItem)
     {
@@ -61,7 +66,23 @@ public class ItemSocket : MonoBehaviour
         {
             InventoryManager.Instance.RemoveItem(itemKey);
 
-            Destroy(DoorKey);
+            Destroy(Door);
+
+            return true;
+        }
+        return false;
+    }
+    public bool ActivateMoving(Item itemBattery)
+    {
+        if (isFilled) return false;
+
+        if (itemBattery.type == requiredTypeBattery)
+        {
+            InventoryManager.Instance.RemoveItem(itemBattery);
+
+            MoveObject.enabled = true;
+
+            Destroy(anchor);
 
             return true;
         }

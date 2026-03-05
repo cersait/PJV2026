@@ -667,7 +667,10 @@ MonoBehaviour:
   requiredTypeKey1: 0
   requiredTypeKey2: 0
   requiredTypeKey: 0
-  DoorKey: {fileID: 0}
+  Door: {fileID: 0}
+  requiredTypeBattery: 0
+  MoveObject: {fileID: 0}
+  anchor: {fileID: 0}
 --- !u!1 &274748372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1871,10 @@ MonoBehaviour:
   requiredTypeKey1: 0
   requiredTypeKey2: 0
   requiredTypeKey: 0
-  DoorKey: {fileID: 0}
+  Door: {fileID: 0}
+  requiredTypeBattery: 0
+  MoveObject: {fileID: 0}
+  anchor: {fileID: 0}
 --- !u!1 &590406598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,13 +2446,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a26242ee71f9de409a043c723718ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredTypeCog: 1
-  doorManager: {fileID: 811943664}
-  visualGear: {fileID: 510056555}
+  requiredTypeCog: 0
+  doorManager: {fileID: 0}
+  visualGear: {fileID: 0}
   requiredTypeKey1: 0
   requiredTypeKey2: 0
-  requiredTypeKey: 0
-  DoorKey: {fileID: 0}
+  requiredTypeKey: 1
+  Door: {fileID: 0}
+  requiredTypeBattery: 0
+  MoveObject: {fileID: 0}
+  anchor: {fileID: 0}
 --- !u!61 &811943661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2571,7 +2580,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811943659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af3e0847289f4514ca9dc9aa7d2ba022, type: 3}
   m_Name: 
@@ -4480,7 +4489,10 @@ MonoBehaviour:
   requiredTypeKey1: 1
   requiredTypeKey2: 2
   requiredTypeKey: 0
-  DoorKey: {fileID: 0}
+  Door: {fileID: 0}
+  requiredTypeBattery: 0
+  MoveObject: {fileID: 0}
+  anchor: {fileID: 0}
 --- !u!1 &1840383220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,7 +4866,10 @@ MonoBehaviour:
   requiredTypeKey1: 0
   requiredTypeKey2: 0
   requiredTypeKey: 0
-  DoorKey: {fileID: 0}
+  Door: {fileID: 0}
+  requiredTypeBattery: 0
+  MoveObject: {fileID: 0}
+  anchor: {fileID: 0}
 --- !u!1 &2111242000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,6 +4970,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  animator: {fileID: 0}
 --- !u!61 &2111242005
 BoxCollider2D:
   m_ObjectHideFlags: 0
