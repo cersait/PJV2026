@@ -47,15 +47,9 @@ public class PlayerMovement : MonoBehaviour
         //animation
         animator.SetBool("IsGrounded", isGrounded);
 
-        if (rb.linearVelocityY < 0)
-            animator.SetBool("IsFalling", true);
-        else
-            animator.SetBool("IsFalling", false);
+        animator.SetBool("IsFalling", rb.linearVelocityY < 0);
 
-        if (moveDirection != 0)
-            animator.SetBool("IsMoving", true);
-        else
-            animator.SetBool("IsMoving", false);
+        animator.SetBool("IsMoving", Input.GetAxisRaw("Horizontal") != 0);
     }
 
     private void Move(float direction)
