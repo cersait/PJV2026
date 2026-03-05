@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f558de0f49ebd142937cce46160c2dc, type: 3}
+  m_Name: MainCharacterLooksAtSign
+  m_EditorClassIdentifier: 
+  npcName: Bob
+  npcPortrait: {fileID: 7721810992165795323, guid: 79f775da663d0c3458a6a92ec4609fac, type: 3}
+  dialogueLines:
+  - Oh, there is a sign. I wonder what it says.
+  - '"Thumbs Up"'
+  - Wha....
+  autoProgressLines: 
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
