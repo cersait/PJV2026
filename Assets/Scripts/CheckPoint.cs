@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+
+    //Aiden
     private bool checkpointReached = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
