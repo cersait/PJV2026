@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ThePastDude
   m_EditorClassIdentifier: 
   npcName: 
-  npcPortrait: {fileID: 0}
+  npcPortrait: {fileID: 7721810992165795323, guid: 79f775da663d0c3458a6a92ec4609fac, type: 3}
   dialogueLines:
-  - 
-  - 
-  - 
-  autoProgressLines: 
+  - Sup fellow travler
+  - 'im going to warn you not to go any further '
+  - thats it, Bye
+  autoProgressLines: 01
   autoProgressDelay: 1.5
   typingSpeed: 0.05

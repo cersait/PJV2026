@@ -6,6 +6,8 @@ using static Interfaces;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+
+    // Gjort Av Aiden 
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
@@ -20,6 +22,8 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
+
+        
         if (dialogueData == null) return;
 
         if (!isDialogueActive)
@@ -61,6 +65,12 @@ public class NPC : MonoBehaviour, IInteractable
 
     private void StartDialogue(GameObject interactor)
     {
+
+        PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+        if (pauseMenu != null)
+        {
+            pauseMenu.enabled = false;
+        }
         isDialogueActive = true;
         dialogueIndex = 0;
 
@@ -96,6 +106,11 @@ public class NPC : MonoBehaviour, IInteractable
 
     public  void EndDialogue()
     {
+        PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+        if (pauseMenu != null)
+        {
+            pauseMenu.enabled = true;
+        }
         StopAllCoroutines();
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
