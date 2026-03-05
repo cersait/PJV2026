@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PuzzleDoor : MonoBehaviour
 {
-    [SerializeField] private GameObject keypadUI;
 
 
     private bool unlocked = false;
