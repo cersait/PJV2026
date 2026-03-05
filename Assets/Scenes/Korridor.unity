@@ -5711,7 +5711,7 @@ Transform:
   m_GameObject: {fileID: 1482912939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 104.970406, y: 16.095522, z: -10}
+  m_LocalPosition: {x: 104.97155, y: 16.095512, z: -10}
   m_LocalScale: {x: 0.38873056, y: 0.27444753, z: 0.15539023}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6137,6 +6137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551075942}
   - component: {fileID: 1551075941}
+  - component: {fileID: 1551075943}
   m_Layer: 0
   m_Name: DoorTransition
   m_TagString: Untagged
@@ -6174,7 +6175,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -6205,6 +6206,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551075943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551075940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7008355ffb1f50b44b70dbf57ece4f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Anton Scene
 --- !u!1 &1655481854
 GameObject:
   m_ObjectHideFlags: 0

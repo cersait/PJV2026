@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Kugghjul
   - Maskin
+  - NewLevel
+  - OldLevel
   layers:
   - Default
   - TransparentFX
