@@ -2,30 +2,39 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //aiden
-    private Vector3 lastCheckpoint;
+    private Vector3 LastCheckpoint;
+    private Rigidbody2D rb;
 
-    private void Start()
+    void Start()
     {
-        // Initialize the checkpoint to starting position
-        lastCheckpoint = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+
+        LastCheckpoint = transform.position;
     }
 
-    public void SetCheckpoint(Vector3 checkpointPosition)
+    public void SetCheckPoint(Vector3 checkpointPostion)
     {
-        lastCheckpoint = checkpointPosition;
-        Debug.Log("Checkpoint reached at: " + lastCheckpoint);
+        LastCheckpoint = checkpointPostion;
+
     }
 
-    public void ResetToCheckpoint()
+
+    public void Respawn()
     {
-        transform.position = lastCheckpoint;
-        // Optional: reset velocity if using Rigidbody2D
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        transform.position = LastCheckpoint;
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
+        }
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -10f)
+        {
+            Respawn();
         }
     }
 }
