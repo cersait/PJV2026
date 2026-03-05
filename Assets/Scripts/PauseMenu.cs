@@ -15,6 +15,10 @@ public class PauseMenu : MonoBehaviour
             else
                 Pause();
         }
+
+        
+        
+
     }
 
     public void Resume()

@@ -20,11 +20,7 @@ public class PlayerInteract : MonoBehaviour
                 currentInteractable.Interact(gameObject);
             }
         
-        if (currentInteractable != null && Input.GetKeyDown(interactKey))
-        {
-            currentInteractable.Interact(gameObject);
-
-        }
+      
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
