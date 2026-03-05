@@ -57,6 +57,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
             connectedDoor.BlockTeleport();
         }
+
     }
 
     void BlockTeleport()
