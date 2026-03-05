@@ -435,6 +435,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1673369532703913621, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673369532703913621, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030383083294223633, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.034926064
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030383083294223633, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.025710903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030383083294223633, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030383083294223633, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0571
+      objectReference: {fileID: 0}
     - target: {fileID: 4038366471374097509, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.64055
@@ -487,12 +511,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4539673208634960155, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8603794394124313084, guid: 120e0961ecd767c4aa1bf3b9c4a413ea, type: 3}
+    - target: {fileID: 4539673208634960155, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539673208634960155, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539673208634960155, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6825924469091108919, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
       propertyPath: m_Name
       value: Cooler Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1892424100048177474, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 7318303147766263443, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 6907602917677504221, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 8409463273688298438, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 7074761660323547934, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 165356039102112472, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 7746057684024268269, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 793298155538000130, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 2501640789721308671, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 5039665236552958947, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 1229259312439694689, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
+    - {fileID: 9184251605960953014, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
