@@ -9,6 +9,14 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Vector2 startPos;
     private Item currentItem; // The specific data for the item in this slot
 
+    PointerEventData debugData;
+
+    private void Update()
+    {
+        if (debugData != null)
+            Debug.DrawLine(Camera.main.ScreenToWorldPoint(debugData.position), Camera.main.ScreenToWorldPoint(debugData.position) - new Vector3(0, 0, 10), Color.red);
+    }
+
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -32,6 +40,9 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / GetComponentInParent<Canvas>().scaleFactor;
+
+        GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
+        Debug.Log(hitObject);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -40,6 +51,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvasGroup.alpha = 1f;
 
         GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
+        Debug.Log(hitObject);
+        //Debug.Log(eventData);
+
+        debugData = eventData;
 
         if (hitObject != null)
         {
