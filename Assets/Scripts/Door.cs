@@ -3,6 +3,8 @@ using static Interfaces;
 
 public class Door : MonoBehaviour, IInteractable
 {
+
+    // Gjort av Aiden
     [SerializeField] private string requiredKeyID;  // Example: "RedKey"
     [SerializeField] private Transform teleportPoint;
     [SerializeField] private GameObject door;

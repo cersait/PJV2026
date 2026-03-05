@@ -4,7 +4,7 @@ public class CheckPoint : MonoBehaviour
 {
 
 
-    private bool checkpointReached = true;
+    private bool checkpointReached = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !checkpointReached)
