@@ -40,6 +40,7 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         canvasGroup.alpha = 1f;
 
         GameObject hitObject = eventData.pointerCurrentRaycast.gameObject;
+        Debug.Log(hitObject);
 
         if (hitObject != null)
         {
