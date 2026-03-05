@@ -60,6 +60,10 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 {
                     return;
                 }
+                if (socket.ActivateMoving(currentItem))
+                {
+                    return;
+                }
             }
         }
         ResetToHome();
