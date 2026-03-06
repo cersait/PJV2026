@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    // Gjort Av Aiden
     private Vector3 LastCheckpoint;
     private Rigidbody2D rb;
 

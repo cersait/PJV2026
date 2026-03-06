@@ -5565,7 +5565,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1396514427}
         m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
-        m_MethodName: ClearCode
+        m_MethodName: CheckCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6871,7 +6871,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1396514427}
         m_TargetAssemblyTypeName: KeypadPuzzle, Assembly-CSharp
-        m_MethodName: CheckCode
+        m_MethodName: ClearCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9348,7 +9348,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3
+          m_StringArgument: 4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1349670339
@@ -9579,7 +9579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   codeText: {fileID: 1511171036}
   correctCode: 452
-  doorToUnlock: {fileID: 0}
+  doorToUnlock: {fileID: 1590267238}
+  keyPad: {fileID: 1396514423}
 --- !u!1 &1402677748
 GameObject:
   m_ObjectHideFlags: 0
@@ -11195,7 +11196,7 @@ GameObject:
   - component: {fileID: 1590267242}
   - component: {fileID: 1590267241}
   - component: {fileID: 1590267240}
-  - component: {fileID: 1590267239}
+  - component: {fileID: 1590267243}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -11203,21 +11204,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1590267239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590267238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf175d05af2f4604284f0fd65f7bc989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codeText: {fileID: 0}
-  correctCode: 452
-  doorToUnlock: {fileID: 0}
 --- !u!61 &1590267240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11334,6 +11320,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590267243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590267238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499e456aea6074248b42680c0d95bd93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1611195323
 GameObject:
   m_ObjectHideFlags: 0

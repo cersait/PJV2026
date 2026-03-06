@@ -3,9 +3,12 @@ using TMPro;
 
 public class KeypadPuzzle : MonoBehaviour
 {
+
+    // Gjord av Aiden 
     [SerializeField] private TMP_Text codeText;
     [SerializeField] private string correctCode = "452";
     [SerializeField] private GameObject doorToUnlock;
+    [SerializeField] private GameObject keyPad;
 
     private string currentCode = "";
 
@@ -29,10 +32,12 @@ public class KeypadPuzzle : MonoBehaviour
         if (currentCode == correctCode)
         {
             doorToUnlock.GetComponent<PuzzleDoor>().UnlockDoor();
-            gameObject.SetActive(false);
+            keyPad.SetActive(false);
         }
         else
         {
+            Debug.Log("Wrong Code");
+
             currentCode = "Wrong code";
             ClearCode();
 

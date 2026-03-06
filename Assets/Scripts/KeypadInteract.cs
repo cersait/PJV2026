@@ -2,6 +2,8 @@ using UnityEngine;
 using static Interfaces;
 public class KeypadInteract : MonoBehaviour, IInteractable
 {
+
+    // Gjord av Aiden
     [SerializeField] private GameObject keypadUI;
 
 

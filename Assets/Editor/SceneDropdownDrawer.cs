@@ -5,6 +5,8 @@ using System.Linq;
 [CustomPropertyDrawer(typeof(SceneDropdownAttribute))]
 public class SceneDropdownDrawer : PropertyDrawer
 {
+    // Aiden
+    // Det bara gjorde det lättre att välja vilken scene man kan i, För Inspector.
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         var scenes = EditorBuildSettings.scenes

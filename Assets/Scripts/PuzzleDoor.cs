@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class PuzzleDoor : MonoBehaviour
 {
-
-
-    private bool unlocked = false;
-
+    // Aiden
     public void UnlockDoor()
     {
-        unlocked = true;
-
-
+        // Tar bort dörren
+        Debug.Log("Door Unlocked");
         gameObject.SetActive(false);
     }
 

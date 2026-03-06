@@ -3,6 +3,8 @@ using static Interfaces;
 
 public class LockedDoor : MonoBehaviour, IInteractable
 {
+
+    // Gjort av Aiden
     [Header("Door Settings")]
     [SerializeField] private LockedDoor connectedDoor;
     [SerializeField] private string requiredKeyID = "";
@@ -16,13 +18,15 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        //Om startslocked är sant så är den låst i början, annars är det öpen.
         isLocked = startsLocked;
     }
 
     public void Interact(GameObject interactor)
     {
+        // Får inventery för att veta om man har nyckeln eller inte
         Inventory inventory = interactor.GetComponent<Inventory>();
-
+        // Om låst så checkar det om du har nyckeln eller inte och om du har inte så gör det inget men du har det så använder Unlockdoor)
         if (isLocked)
         {
             if (inventory != null && inventory.HasItem(requiredKeyID))
@@ -31,16 +35,19 @@ public class LockedDoor : MonoBehaviour, IInteractable
             }
             else
             {
+                // dörren är låst
                 Debug.Log("Door is locked.");
                 return;
             }
         }
-
+        // Man går till nästa rummet
         Teleport(interactor);
     }
 
     void UnlockDoor(Inventory inventory)
     {
+
+        // Det öppnar dörren
         isLocked = false;
         inventory.RemoveItem(requiredKeyID);
 
