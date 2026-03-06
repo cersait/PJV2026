@@ -15,6 +15,7 @@ public class StartGame : MonoBehaviour
 
     [SerializeField] Volume volume;
     [SerializeField] SpriteRenderer fadeToBlack;
+    [SerializeField] AudioSource audio;
     [SerializeField] float speedMult = 0.5f;
 
     [SerializeField] int targetScene;
@@ -33,10 +34,13 @@ public class StartGame : MonoBehaviour
         pastObjects.gameObject.SetActive(true);
 
         volume.weight = 1;
+        audio.Play();
 
         while(volume.weight - Time.deltaTime > 0)
         {
             volume.weight -= Time.deltaTime * speedMult;
+            audio.volume -= Time.deltaTime * speedMult;
+
             yield return new WaitForEndOfFrame();
         }
 
