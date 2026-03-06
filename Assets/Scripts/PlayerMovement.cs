@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         float moveDirection = Input.GetAxis("Horizontal");
+        
         Move(moveDirection);
 
         if (moveDirection > 0 && !isFacingRight)
@@ -54,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move(float direction)
     {
+        print("Dir: " +direction);
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
     }
 

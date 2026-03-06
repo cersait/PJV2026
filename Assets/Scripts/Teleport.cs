@@ -1,17 +1,33 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
     [SerializeField] GameObject nextPortal;
+
     private bool playerIsOverlapping = false;
     private Transform playerTransform;
 
+    [SerializeField] CinemachineCamera cam;
+    [SerializeField] Transform playerCamTarget;   // Player follow target
+    [SerializeField] Transform portalCamTarget;   // Camera position when teleported
+
     void Update()
     {
-        // Vi kollar efter knapptryck varje bildruta, men bara om spelaren står i portalen
         if (playerIsOverlapping && Input.GetKeyDown(KeyCode.T))
         {
+            // Teleport player
             playerTransform.position = nextPortal.transform.position;
+
+            // Switch camera target
+            if (cam.Follow == playerCamTarget)
+            {
+                cam.Follow = portalCamTarget;
+            }
+            else
+            {
+                cam.Follow = playerCamTarget;
+            }
         }
     }
 
@@ -29,7 +45,6 @@ public class Teleport : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerIsOverlapping = false;
-            Debug.Log("Spelaren lämnade portalen");
         }
     }
 }

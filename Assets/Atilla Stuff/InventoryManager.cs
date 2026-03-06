@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
     public List<Item> carriedItems = new List<Item>();
-    public int maxSlots = 3;
+    public int maxSlots = 1;
 
     public Item presentKeyTemplate;
     public Item pastKeyTemplate;
