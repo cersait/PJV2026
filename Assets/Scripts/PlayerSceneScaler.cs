@@ -21,7 +21,7 @@ public class PlayerSceneScaler : MonoBehaviour
         }
         else if (scene.name == "Korridor")
         {
-            transform.localScale = new Vector3(44.46503f, 9.338171f, 1f);
+            transform.localScale = new Vector3(3.013816f, 2.840733f, 1f);
         }
     }
 }
