@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+
+    // ´Gjort av Aiden
     public static bool isPaused = false;
     public static bool isInDialogue = false;
     [SerializeField] private GameObject pauseMenuUI;

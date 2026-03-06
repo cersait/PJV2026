@@ -33,6 +33,7 @@ public class KeypadPuzzle : MonoBehaviour
         {
             doorToUnlock.GetComponent<PuzzleDoor>().UnlockDoor();
             keyPad.SetActive(false);
+            Time.timeScale = 1;
         }
         else
         {
