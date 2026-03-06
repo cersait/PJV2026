@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MovingPlatform : MonoBehaviour
 {
+    // gjort av Atilla Tokat
     public Transform pointA;
     public Transform pointB;
     public float speed = 3.0f;

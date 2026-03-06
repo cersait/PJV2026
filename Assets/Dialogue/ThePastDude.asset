@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThePastDude
   m_EditorClassIdentifier: 
   npcName: 
-  npcPortrait: {fileID: 7721810992165795323, guid: 79f775da663d0c3458a6a92ec4609fac, type: 3}
+  npcPortrait: {fileID: 8583479165029445051, guid: fd71863725adc344ab42ba4f0c0c64bd, type: 3}
   dialogueLines:
   - Sup fellow travler
   - 'im going to warn you not to go any further '

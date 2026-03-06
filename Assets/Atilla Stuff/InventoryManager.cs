@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
+    // gjort av Atilla Tokat
     public static InventoryManager Instance;
     public List<Item> carriedItems = new List<Item>();
     public int maxSlots = 1;

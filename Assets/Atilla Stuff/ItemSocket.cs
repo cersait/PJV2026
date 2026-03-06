@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemSocket : MonoBehaviour
 {
+    // gjort av Atilla Tokat
     [Header("Slow Door")]
     public ItemType requiredTypeCog;
     public DoorManager doorManager;
