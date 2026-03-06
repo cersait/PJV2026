@@ -10230,7 +10230,7 @@ Transform:
   - {fileID: 479648981}
   - {fileID: 1282892005}
   - {fileID: 349134208}
-  - {fileID: 1629515147}
+  - {fileID: 1256047047}
   - {fileID: 1922319531}
   - {fileID: 912866064}
   m_Father: {fileID: 0}
@@ -11298,6 +11298,53 @@ MonoBehaviour:
   oldColor: {r: 1, g: 1, b: 1, a: 1}
   presentSprite: {fileID: -8637331267982863580, guid: a42cf673bf8ff124b92a10e1fe3902f6, type: 3}
   pastSprite: {fileID: -2289140627963951581, guid: f0922aab03d0e9942a46e157e5eabc23, type: 3}
+--- !u!1 &1256047046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256047047}
+  - component: {fileID: 1256047048}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1256047047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256047046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -123.64, y: 4.89, z: 9.940171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1629515147}
+  m_Father: {fileID: 1131314603}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256047048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256047046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc917a5d0d9a9d4fba081b84db8d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  presentGameObject: {fileID: 0}
+  pastGameObject: {fileID: 1629515146}
 --- !u!1 &1278984732
 GameObject:
   m_ObjectHideFlags: 0
@@ -14179,11 +14226,11 @@ Transform:
   m_GameObject: {fileID: 1629515146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -123.64, y: 4.89, z: 9.940171}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1131314603}
+  m_Father: {fileID: 1256047047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1629515148
 MonoBehaviour:
