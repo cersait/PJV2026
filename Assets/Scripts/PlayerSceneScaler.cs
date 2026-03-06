@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSceneScaler : MonoBehaviour
 {
+
+    //Not Used
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
