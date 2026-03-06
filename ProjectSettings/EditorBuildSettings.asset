@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 485a5270437698d45ba90a81ae9c37b1
+  - enabled: 1
     path: Assets/Scenes/Anton Scene.unity
     guid: 84a682243cb764c478e7545f88342b75
+  - enabled: 1
+    path: Assets/Scenes/Korridor.unity
+    guid: 4fbd63a4566e94045aa11e9ae2c5ac19
   - enabled: 0
     path: Assets/Scenes/Tutorial_Levels/TutorialLevel_1.unity
     guid: ff6e96ca161650a459d6a31d8079df29
@@ -23,12 +29,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sample2.unity
     guid: 264eb619874fd6346827de93126656a5
-  - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 485a5270437698d45ba90a81ae9c37b1
-  - enabled: 1
-    path: Assets/Scenes/Korridor.unity
-    guid: 4fbd63a4566e94045aa11e9ae2c5ac19
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
