@@ -14,7 +14,7 @@ public class Teleport : MonoBehaviour
 
     void Update()
     {
-        if (playerIsOverlapping && Input.GetKeyDown(KeyCode.T))
+        if (playerIsOverlapping && Input.GetKeyDown(KeyCode.F))
         {
             // Teleport player
             playerTransform.position = nextPortal.transform.position;

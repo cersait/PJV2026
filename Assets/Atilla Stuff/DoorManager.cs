@@ -35,7 +35,7 @@ public class DoorManager : MonoBehaviour
 
     System.Collections.IEnumerator SlideDoor()
     {
-        Vector3 openPosition = door.transform.position + new Vector3(0, 3, 0);
+        Vector3 openPosition = door.transform.position + new Vector3(0, 4.5f, 0);
         float speed = 2f;
 
         while (Vector3.Distance(door.transform.position, openPosition) > 0.01f)
