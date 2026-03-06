@@ -899,7 +899,7 @@ MonoBehaviour:
   fadeToBlack: {fileID: 2132458415}
   audio: {fileID: 1266506888}
   speedMult: 0.5
-  targetScene: 0
+  targetScene: 1
 --- !u!114 &1266506885
 MonoBehaviour:
   m_ObjectHideFlags: 0
