@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
+
+    // gjort av Atilla Tokat
     public int gearsRequired;
     private int gearsPlaced = 0;
     public GameObject door;

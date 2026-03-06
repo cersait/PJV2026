@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
+    // Gjort av Aiden o Atilla Tokat
     public List<Image> itemIcons = new List<Image>();
 
     void Start()

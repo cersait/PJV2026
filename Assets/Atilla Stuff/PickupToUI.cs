@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PickupToUI : MonoBehaviour
 {
+    // gjort av Atilla Tokat
     // Drag your Item ScriptableObject (Cogwheel or Key) here in the Inspector
     public Item itemData;
 

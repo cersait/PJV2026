@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GearSpinner : MonoBehaviour
 {
+    // gjort av Atilla Tokat
     public float spinSpeed = 100f;
     private bool isSpinning = false;
     public GameObject spinRight;

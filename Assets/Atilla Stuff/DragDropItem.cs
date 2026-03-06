@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    // gjort av Atilla Tokat
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector2 startPos;
