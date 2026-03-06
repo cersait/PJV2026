@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("IsFalling", rb.linearVelocityY < 0);
 
-        animator.SetBool("IsMoving", Input.GetAxisRaw("Horizontal") != 0);
+        animator.SetBool("IsMoving", Input.GetAxis("Horizontal") != 0);
     }
 
     private void Move(float direction)
