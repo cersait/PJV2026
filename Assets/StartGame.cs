@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class StartGame : MonoBehaviour
 {
     [SerializeField] Transform title;
-    [SerializeField] Transform startText;
 
     [SerializeField] Transform buttonImage;
 
@@ -30,7 +29,6 @@ public class StartGame : MonoBehaviour
     {
         buttonImage.gameObject.SetActive(false);
         title.gameObject.SetActive(false);
-        startText.gameObject.SetActive(false);
         pastObjects.gameObject.SetActive(true);
 
         volume.weight = 1;
