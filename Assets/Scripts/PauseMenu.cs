@@ -10,17 +10,15 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isInDialogue) return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-                Resume(); 
+                Resume();
             else
                 Pause();
         }
-
-        
-        
-
     }
 
     public void Resume()

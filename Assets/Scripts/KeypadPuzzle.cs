@@ -11,7 +11,14 @@ public class KeypadPuzzle : MonoBehaviour
     [SerializeField] private GameObject keyPad;
 
     private string currentCode = "";
-
+    void Update()
+    {
+        // Press ESC to exit keypad
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitKeypad();
+        }
+    }
     public void AddDigits(string digit)
     {
         if (currentCode.Length >= 3) return;
@@ -34,6 +41,7 @@ public class KeypadPuzzle : MonoBehaviour
             doorToUnlock.GetComponent<PuzzleDoor>().UnlockDoor();
             keyPad.SetActive(false);
             Time.timeScale = 1;
+            PauseMenu.isInDialogue = false; // allow pause again
         }
         else
         {
@@ -44,5 +52,15 @@ public class KeypadPuzzle : MonoBehaviour
 
         }
     }
+
+    void ExitKeypad()
+    {
+        keyPad.SetActive(false);
+        Time.timeScale = 1;
+        PauseMenu.isInDialogue = false;
+        ClearCode();
+    }
+
+
 
 }
