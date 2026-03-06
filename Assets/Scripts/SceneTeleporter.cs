@@ -4,15 +4,26 @@ using static Interfaces;
 
 public class SceneTeleporter : MonoBehaviour, IInteractable
 {
-
-    // Gjort av Aiden
     [SceneDropdown]
     public string sceneToLoad;
 
     public void Interact(GameObject interactor)
     {
-        //teleporterar till vald scen 
-        Debug.Log("Loading scene: " + sceneToLoad);
+        DontDestroyOnLoad(interactor);
+        SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadScene(sceneToLoad);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        SpawnPoint spawn = FindObjectOfType<SpawnPoint>();
+
+        if (player != null && spawn != null)
+        {
+            player.transform.position = spawn.transform.position;
+        }
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
