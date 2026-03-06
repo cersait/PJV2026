@@ -56,6 +56,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
 
     void Teleport(GameObject player)
     {
+        //Teleporterar till en vald position, men om det är inte unlocked kommer det inte funkar
         if (!canTeleport) return;
 
         if (connectedDoor != null && connectedDoor.spawnPoint != null)
