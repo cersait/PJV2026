@@ -1,7 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+public class DontDestroy : MonoBehaviour //Finds the camera a player when scene is switched
 {
    void OnEnable()
    {

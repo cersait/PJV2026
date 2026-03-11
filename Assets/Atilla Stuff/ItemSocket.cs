@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class ItemSocket : MonoBehaviour
+public class ItemSocket : MonoBehaviour //manages interactions between item and sockets
 {
     // gjort av Atilla Tokat
-    [Header("Slow Door")]
+    [Header("Slow Door")] //If used, makes so doors open slowly with doormanager
     public ItemType requiredTypeCog;
     public DoorManager doorManager;
-    public GameObject visualGear; // The 3D model that appears when placed
+    public GameObject visualGear; 
     private bool isFilled = false;
 
-    [Header("Key/Item Switcher")]
+    [Header("Key/Item Switcher")] //If used, converts item to another item
     public ItemType requiredTypeKey1;
     public ItemType requiredTypeKey2;
 
-    [Header("Insta Door")]
+    [Header("Insta Door")] //if used, destroys door if a item is put in
     public ItemType requiredTypeKey;
     public GameObject Door;
 
-    [Header("Moving Object")]
+    [Header("Moving Object")] //if used, enables platforms to move
     public ItemType requiredTypeBattery;
     public MovingPlatform MoveObject;
     public GameObject anchor;
 
-    public bool ActivateCog(Item incomingItem)
+    public bool ActivateCog(Item incomingItem) //activates the door and cogwheel function 
     {
         if (isFilled) return false;
 
@@ -41,7 +41,7 @@ public class ItemSocket : MonoBehaviour
         return false;
     }
 
-    public bool ActivateConvert(Item itemToConvert)
+    public bool ActivateConvert(Item itemToConvert) //activates the converter function
     {
         if (itemToConvert.type == requiredTypeKey1)
         {
@@ -59,7 +59,7 @@ public class ItemSocket : MonoBehaviour
         return false;
 
     }
-    public bool ActivateKey(Item itemKey)
+    public bool ActivateKey(Item itemKey) //activates the insta door function
     {
         if (isFilled) return false;
 
@@ -73,7 +73,7 @@ public class ItemSocket : MonoBehaviour
         }
         return false;
     }
-    public bool ActivateMoving(Item itemBattery)
+    public bool ActivateMoving(Item itemBattery) //activates the moving objects function
     {
         if (isFilled) return false;
 

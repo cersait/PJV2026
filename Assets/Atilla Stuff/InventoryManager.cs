@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour //manages the inventory based on activity
 {
     // gjort av Atilla Tokat
     public static InventoryManager Instance;
@@ -10,13 +10,13 @@ public class InventoryManager : MonoBehaviour
 
     public Item presentKeyTemplate;
     public Item pastKeyTemplate;
-    private void Awake()
+    private void Awake() //saves the inventory scene to scene
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
         else { Destroy(gameObject); }
     }
 
-    public bool TryAddItem(Item newItem)
+    public bool TryAddItem(Item newItem) //tries to add item to inventory
     {
         if (carriedItems.Count < maxSlots)
         {
@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public void RemoveItem(Item itemToRemove)
+    public void RemoveItem(Item itemToRemove) //removes item from inventory
     {
         if (carriedItems.Contains(itemToRemove))
         {
@@ -36,7 +36,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void Convert(Item itemToConvert)
+    public void Convert(Item itemToConvert) //converts item if dropped into a itemswitcher
     {
         int index = carriedItems.IndexOf(itemToConvert);
 
@@ -57,7 +57,7 @@ public class InventoryManager : MonoBehaviour
         UpdateUIInScene();
     }
 
-    public void UpdateUIInScene()
+    public void UpdateUIInScene() //updates the scenes UI
     {
         InventoryUI currentUI = Object.FindFirstObjectByType<InventoryUI>();
         if (currentUI != null) currentUI.Refresh(carriedItems);

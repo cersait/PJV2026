@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour //Inventorys UI
 {
     // Gjort av Aiden o Atilla Tokat
     public List<Image> itemIcons = new List<Image>();
@@ -13,7 +13,7 @@ public class InventoryUI : MonoBehaviour
             Refresh(InventoryManager.Instance.carriedItems);
     }
 
-    public void Refresh(List<Item> items)
+    public void Refresh(List<Item> items) //adds the itemdatas sprite to the inventory UI, and can be used by the dragdropitem script
     {
         for (int i = 0; i < itemIcons.Count; i++)
         {
