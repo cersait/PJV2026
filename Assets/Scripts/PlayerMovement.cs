@@ -20,18 +20,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        // hittar rigibody
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        // Stop all input if paused or in dialogue
+        // Stoppar alla inputs när man går in i pause meny eller Dialogue 
         if (PauseMenu.isPaused || PauseMenu.isInDialogue)
         {
             rb.linearVelocity = Vector2.zero; // ensures no movement
             return;
         }
-
+        // Kollar om man är på golvet
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         float moveDirection = Input.GetAxis("Horizontal");
@@ -57,21 +58,24 @@ public class PlayerMovement : MonoBehaviour
     private void Move(float direction)
     {
         print("Dir: " +direction);
+        //Man flyttar spelaren med A och D
         rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
     }
 
     private void Jump()
     {
+        // Man hoppar med Space
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void Flip()
     {
+        // spelaren väder sig så vänder hela objecten
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
     }
 
-    // Called by NPC when dialogue starts
+    // stoppar allt movement
     public void StopMovement()
     {
         rb.linearVelocity = Vector2.zero;

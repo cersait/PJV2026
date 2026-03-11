@@ -67,13 +67,13 @@ public class LockedDoor : MonoBehaviour, IInteractable
         }
 
     }
-
+    // Stängs av teleport för 0.5 sekunder
     void BlockTeleport()
     {
         canTeleport = false;
         Invoke(nameof(ResetTeleport), 0.5f);
     }
-
+    // Lägger på teleport igen
     void ResetTeleport()
     {
         canTeleport = true;

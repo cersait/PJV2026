@@ -19,6 +19,7 @@ public class KeypadPuzzle : MonoBehaviour
             ExitKeypad();
         }
     }
+    // Att lägga till alla knappars variabel till deras number t.ex, knapp 1 ska skriva 1 när man trycker på det
     public void AddDigits(string digit)
     {
         if (currentCode.Length >= 3) return;
@@ -27,13 +28,15 @@ public class KeypadPuzzle : MonoBehaviour
         codeText.text = currentCode;
         
     }
-
+    // När man trycker på det så allt du skrev raderas
     public void ClearCode()
     {
         currentCode = "";
         codeText.text="";
 
     }
+
+    // man trycker det här knappen så kollar det om du fick rätt kod, om du fick det så öppnar dörren annars tar de bort koden du skrev och du måste skriva ett nytt
     public void CheckCode()
     {
         if (currentCode == correctCode)
@@ -52,7 +55,7 @@ public class KeypadPuzzle : MonoBehaviour
 
         }
     }
-
+    // Om du inte har koden så lämna man med esc
     void ExitKeypad()
     {
         keyPad.SetActive(false);

@@ -12,16 +12,17 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Preserves object
+            DontDestroyOnLoad(gameObject); // Sparar bara ett av denna gameObject
         }
         else
         {
-            Destroy(gameObject); // Destroys duplicate
+            Destroy(gameObject); // tar sönder om det finns mer än ett
         }
     }
 
     public void AddItem(string itemID)
     {
+       // om det har Item ID kommer det sparas i inventory
         if (!items.Contains(itemID))
         {
             items.Add(itemID);
@@ -36,6 +37,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(string itemID)
     {
+        // när item blir används så tars det bort från inventory
         if (items.Contains(itemID))
         {
             items.Remove(itemID);

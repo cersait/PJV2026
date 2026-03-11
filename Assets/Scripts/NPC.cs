@@ -28,19 +28,19 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (!isDialogueActive)
         {
-            // First press: start dialogue
+            // Tryck F(Interact knappen) för att starta dialogue, genom att öppna dialogue panel
             StartDialogue(interactor);
             return;
         }
 
-        // If typing, finish current line immediately
+        // Om man trycker F medans text blir fortfarande skriven ska full text visas istället för att vänta
         if (isTyping)
         {
             StopCoroutine(typingCoroutine);
             dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
 
-            // If this is the last line, close dialogue immediately
+            // Om det är sista linjen så slutar dialoguen och stänger av dialogue panel
             if (dialogueIndex == dialogueData.dialogueLines.Length - 1)
             {
                 EndDialogue();
@@ -49,10 +49,10 @@ public class NPC : MonoBehaviour, IInteractable
             return;
         }
 
-        // Not typing: move to next line
+        // om IsTyping falsk så byter det till nästa linjen
         dialogueIndex++;
 
-        // Check if we've reached the end
+        // Kollar om det är det sista linjen av dialogue 
         if (dialogueIndex >= dialogueData.dialogueLines.Length)
         {
             EndDialogue();
@@ -62,10 +62,10 @@ public class NPC : MonoBehaviour, IInteractable
             typingCoroutine = StartCoroutine(TypeLine());
         }
     }
-
+    
     private void StartDialogue(GameObject interactor)
     {
-
+        // Hittar pause meny och stänger av det så man kan inte gå i det
         PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
         if (pauseMenu != null)
         {
@@ -74,17 +74,17 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        // Show NPC info
+        // Visa allt NPC Info som namn och bild på NPC 
         nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
         dialoguePanel.SetActive(true);
         PauseMenu.isInDialogue = true;
 
-        // Stop player immediately
+        // Så spelaren inte går medans de pratar med NPC
         PlayerMovement player = interactor.GetComponent<PlayerMovement>();
         if (player != null) player.StopMovement();
 
-        // Start typing first line
+        // börjar skriva första linjen av text
         typingCoroutine = StartCoroutine(TypeLine());
     }
 
@@ -92,20 +92,21 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isTyping = true;
         dialogueText.SetText("");
-
+        // vad ska skrivas i text lådan och vilka text ska skrivas,
         string line = dialogueData.dialogueLines[dialogueIndex];
         foreach (char letter in line)
         {
             dialogueText.text += letter;
             yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
         }
-
+        
         isTyping = false;
-        // Do NOT auto-close; wait for player to press F
+      
     }
 
     public  void EndDialogue()
     {
+        // slut dialogue så det stänger av allt med dialogue och sätter på pause meny
         PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
         if (pauseMenu != null)
         {

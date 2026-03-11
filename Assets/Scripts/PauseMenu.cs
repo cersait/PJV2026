@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        // Om spelaren pratar med NPC så kan man inte pausa spelet 
         if (PauseMenu.isInDialogue) return;
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,6 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        // Man trycker på knappet för att fortsätta spelet
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -30,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        // trycker man esc så pausar spelet 
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -37,8 +40,9 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        // tryckar man på knappen så stänger man av spelet helt
         Application.Quit();
-        Debug.Log("Game Quit"); // only works in build
+        Debug.Log("Game Quit"); 
     }
 
     

@@ -23,7 +23,7 @@ public class ResetPlayerButton : MonoBehaviour
         }
 
     }
-    // Example: if player falls below map
+    // om spelaren ramlar så respawnar automatiskt 
     void Update()
     {
         if (transform.position.y < -10f)

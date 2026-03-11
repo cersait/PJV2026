@@ -9,10 +9,12 @@ public class ItemPickup : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
+        // Använd F för att plocka upp saker 
         Inventory inventory = interactor.GetComponent<Inventory>();
 
         if (inventory != null)
         {
+            // tar in i inventory
             inventory.AddItem(itemID);
             Destroy(gameObject);
         }

@@ -27,6 +27,7 @@ public class PlayerInteract : MonoBehaviour
     // Aiden
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // när man kommer in i collidern så kan man använda Interact knappen för att interacta 
         IInteractable interactable = collision.GetComponent<IInteractable>();
         if (interactable != null)
         {
@@ -36,6 +37,7 @@ public class PlayerInteract : MonoBehaviour
     // Aiden
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // om man lämnar collidern så kan man inte använda interact
         IInteractable interactable = collision.GetComponent<IInteractable>();
         if (interactable != null && interactable == currentInteractable)
         {
