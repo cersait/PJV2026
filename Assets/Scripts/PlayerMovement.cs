@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Gjort av Aiden
     [Header("Playermovement")]
-    private float moveSpeed = 5f;
-    private float jumpForce = 10f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 10f;
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;

@@ -1224,38 +1224,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &157426453
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157426454}
-  m_Layer: 3
-  m_Name: FakeHouse3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157426454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157426453}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.060207, y: -6.869728, z: 0.23500855}
-  m_LocalScale: {x: 8.05882, y: -8.573956, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 904968545}
-  m_Father: {fileID: 1777440540}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &171311955
 GameObject:
   m_ObjectHideFlags: 0
@@ -6726,37 +6694,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &904968544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 904968545}
-  m_Layer: 3
-  m_Name: Railing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &904968545
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904968544}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14121133, y: -0.07287187, z: 0}
-  m_LocalScale: {x: 0.012239648, y: 0.028381238, z: 0.24297312}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 157426454}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &912866063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6785,7 +6722,7 @@ Transform:
   m_GameObject: {fileID: 912866063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -80.55, y: 0.91, z: 9.940171}
+  m_LocalPosition: {x: -80.56, y: 1.16, z: 9.940171}
   m_LocalScale: {x: 3.9884808, y: 4.3203382, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11855,37 +11792,6 @@ MonoBehaviour:
   oldColor: {r: 1, g: 1, b: 1, a: 1}
   presentSprite: {fileID: 697874993771656122, guid: 79188a3fdfd588242872c3c2851e4a6f, type: 3}
   pastSprite: {fileID: 4260234683958774436, guid: 490f585b810a75041af9c14f2a0a0420, type: 3}
---- !u!1 &1651349386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1651349387}
-  m_Layer: 0
-  m_Name: Fakehouse2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1651349387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651349386}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.145541, y: -4.34404, z: 0.039028555}
-  m_LocalScale: {x: 0.59931, y: 0.59931, z: 0.59931}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1777440540}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657255693
 GameObject:
   m_ObjectHideFlags: 0
@@ -13027,39 +12933,6 @@ Transform:
   m_LocalScale: {x: 2.628334, y: 2.1739388, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1777440539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1777440540}
-  m_Layer: 0
-  m_Name: FakeHouses
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1777440540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777440539}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.350217, y: 43.410927, z: -0.23500855}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1651349387}
-  - {fileID: 157426454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778276055
@@ -15812,7 +15685,6 @@ SceneRoots:
   - {fileID: 1425062332}
   - {fileID: 12449222}
   - {fileID: 1029808701}
-  - {fileID: 1777440540}
   - {fileID: 1737000447}
   - {fileID: 50675847}
   - {fileID: 259823408}
