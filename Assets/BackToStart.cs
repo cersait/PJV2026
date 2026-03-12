@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BackToStart : MonoBehaviour
 {
-    [SerializeField] int targetScene;
+    [SerializeField] RectTransform fadeToBlack;
     private void OnDisable()
     {
         SceneManager.LoadScene(0);
