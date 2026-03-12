@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +23,34 @@ public class PlayerMovement : MonoBehaviour
     {
         // hittar rigibody
         rb = GetComponent<Rigidbody2D>();
+
+        ApplySceneMovement();
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded()
+    {
+        ApplySceneMovement();
+    }
+
+    void ApplySceneMovement()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Korridor")
+        {
+            moveSpeed = 13f;
+            jumpForce = 10f;
+
+        }
+        else if (sceneName == "Anton Scene")
+        {
+            moveSpeed = 5f;
+            jumpForce = 10f; 
+        }
+        
+
     }
 
     private void Update()
