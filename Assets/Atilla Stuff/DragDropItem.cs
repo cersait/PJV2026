@@ -67,7 +67,7 @@ public class DragDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 {
                     // If successful, the UI Refresh will handle hiding the slot
                     return;
-                }
+                } //All of these under makes so you can interact with the itemsocket when drag-dropping
                 if (socket.ActivateConvert(currentItem))
                 {
                     return;

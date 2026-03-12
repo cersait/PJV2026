@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour //fixar så plattformar rör sig till punkt A till punkt B
 {
     // gjort av Atilla Tokat
     public Transform pointA;
@@ -21,27 +21,27 @@ public class MovingPlatform : MonoBehaviour
     {
         if (isWaiting) return;
 
-        // Flytta plattformen
+        // Flyttar plattformen
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
 
-        // Kolla om vi nått fram
+        // Kollar om vi nått fram
         if (Vector3.Distance(transform.position, target) < 0.01f)
         {
             StartCoroutine(WaitAndSwitch());
         }
     }
 
-    IEnumerator WaitAndSwitch()
+    IEnumerator WaitAndSwitch() //väntar några sekunder tills den börjar röra sig till nästa punkt
     {
         isWaiting = true;
         yield return new WaitForSeconds(waitTime);
 
-        // Byt målpunkt
+        // Byter målpunkt
         target = (target == pointA.position) ? pointB.position : pointA.position;
         isWaiting = false;
     }
 
-    // FÅ SPELAREN ATT FÖLJA MED
+    // FÅR SPELAREN ATT FÖLJA MED
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
