@@ -15,7 +15,14 @@ MonoBehaviour:
   npcName: Pasta
   npcPortrait: {fileID: 8583479165029445051, guid: fd71863725adc344ab42ba4f0c0c64bd, type: 3}
   dialogueLines:
-  - I warned you...
+  - Who are you!
+  - Where on earth did you come from!
+  - You here to rescue me...
+  - HOW ON THIS GREAT BOUNTIFULL WORLD ARE YOU GOING TO DO THAT!?
+  - that DREADFULL door is locked from the outside!
+  - Time travel?
+  - What-
+  - Whatever just get me out of here good samaritan!
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

@@ -12,7 +12,7 @@ public class SpacifclyAvalibleObject : TimeObject, ITimeTravel
         {
             if (isAvlibleInPresent == true)
             {
-                if (FindFirstObjectByType<TimeController>().isPresent == true)
+                if (TimeController.isPresent == true)
                 {
                     targetGameObjects[i].SetActive(true);
                 }
@@ -23,7 +23,7 @@ public class SpacifclyAvalibleObject : TimeObject, ITimeTravel
             }
             else
             {
-                if (FindFirstObjectByType<TimeController>().isPresent == true)
+                if (TimeController.isPresent == true)
                 {
                     targetGameObjects[i].SetActive(false);
                 }

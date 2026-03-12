@@ -15,9 +15,16 @@ MonoBehaviour:
   npcName: 
   npcPortrait: {fileID: 8583479165029445051, guid: fd71863725adc344ab42ba4f0c0c64bd, type: 3}
   dialogueLines:
-  - Sup fellow travler
-  - 'im going to warn you not to go any further '
-  - thats it, Bye
+  - Greatings there traveler
+  - You may not know me but i have met you before.
+  - For you see with your fancy little radio you manage to rescue me from quite the
+    conundrum
+  - I had ended upp trapped in that boorish building
+  - Some gears might open that god awful place
+  - Your past self said something about there being some in that green house over
+    there?
+  - Now get on with it i say, my past self is stuck somewhere in that dreaded grey
+    shack!
   autoProgressLines: 01
   autoProgressDelay: 1.5
   typingSpeed: 0.05

@@ -5,9 +5,9 @@ public class TimeTracker : TimeObject, ITimeTravel
     [SerializeField] GameObject presentGameObject, pastGameObject;
     void Start()
     {
-        presentGameObject.SetActive(true);
+        presentGameObject.SetActive(TimeController.isPresent);
 
-        pastGameObject.SetActive(false);
+        pastGameObject.SetActive(!TimeController.isPresent);
     }
 
     new public void TimeTravel(bool isPresent)

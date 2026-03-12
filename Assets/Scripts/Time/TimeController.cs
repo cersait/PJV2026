@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 using static TimeObject;
 public class TimeController : MonoBehaviour
 {
-    public bool isPresent = true;
+    public static bool isPresent = true;
     [SerializeField] TimeObject[] timeObjects;
 
     [SerializeField] Volume v;
