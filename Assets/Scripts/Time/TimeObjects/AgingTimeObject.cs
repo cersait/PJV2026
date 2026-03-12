@@ -9,7 +9,7 @@ public class AgingTimeObject : TimeObject, ITimeTravel
     {
         renderer = gameObject.GetComponent<SpriteRenderer>();
 
-        if(FindFirstObjectByType<TimeController>().isPresent == true)
+        if(TimeController.isPresent == true)
         {
             renderer.color = nowColor;
             renderer.sprite = presentSprite;
