@@ -1621,7 +1621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4038366471374097509, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 133.7
+      value: 88.72
       objectReference: {fileID: 0}
     - target: {fileID: 4038366471374097509, guid: 9c7683451e2f89146843334789fe16fd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6746,6 +6746,8 @@ MonoBehaviour:
   - {fileID: 232437598}
   - {fileID: 1030299256}
   - {fileID: 857997411}
+  doorSpeed: 2
+  openYOffset: 4.5
 --- !u!61 &912866066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10105,7 +10107,7 @@ Transform:
   m_GameObject: {fileID: 1425062329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.7, y: 0.8599999, z: -30}
+  m_LocalPosition: {x: 88.72, y: 0.8599999, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
