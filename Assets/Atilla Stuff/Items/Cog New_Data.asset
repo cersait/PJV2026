@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41cb58ad04429448968d861bf32a677, type: 3}
+  m_Name: Cog New_Data
+  m_EditorClassIdentifier: 
+  itemName: Cog New
+  icon: {fileID: 3560688855759609119, guid: 375704ac096337243a5c43dd7a9cdca2, type: 3}
+  type: 3
