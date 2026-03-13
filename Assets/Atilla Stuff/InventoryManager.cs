@@ -62,4 +62,9 @@ public class InventoryManager : MonoBehaviour //manages the inventory based on a
         InventoryUI currentUI = Object.FindFirstObjectByType<InventoryUI>();
         if (currentUI != null) currentUI.Refresh(carriedItems);
     }
+
+    public void ClearInventory()
+    {
+        carriedItems.Clear();
+    }
 }

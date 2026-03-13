@@ -5,20 +5,19 @@ public class Inventory : MonoBehaviour
 {
     // Gjort av Aiden
     public static Inventory Instance;
-    private List<string> items = new List<string>();
+    private static List<string> items = new List<string>();
 
-    private void Awake()
+   /* private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Sparar bara ett av denna gameObject
         }
         else
         {
             Destroy(gameObject); // tar sönder om det finns mer än ett
         }
-    }
+    }*/
 
     public void AddItem(string itemID)
     {

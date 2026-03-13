@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTimeController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerTimeController : MonoBehaviour
     private void Start()
     {
         inputCooldownreset = inputCooldown;
+
+        GetTimeManager();
     }
 
     void Update()
@@ -24,5 +27,11 @@ public class PlayerTimeController : MonoBehaviour
         {
             inputCooldown -= Time.deltaTime;
         }
+    }
+
+    public void GetTimeManager()
+    {
+        timeController = FindFirstObjectByType<TimeController>();
+        Debug.Log("Should work");
     }
 }

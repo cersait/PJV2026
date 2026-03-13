@@ -8217,6 +8217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123900565}
   - component: {fileID: 1123900566}
+  - component: {fileID: 1123900567}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -8255,6 +8256,18 @@ MonoBehaviour:
   maxSlots: 1
   presentKeyTemplate: {fileID: 11400000, guid: df6d676279a885447ba839f879aa50bb, type: 2}
   pastKeyTemplate: {fileID: 11400000, guid: 031661307f477db40aa822dbc2f080e4, type: 2}
+--- !u!114 &1123900567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123900564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee95e1850b682f4c93f008199570ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1131314602
 GameObject:
   m_ObjectHideFlags: 0

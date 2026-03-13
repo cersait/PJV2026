@@ -11,7 +11,6 @@ public class SceneTeleporter : MonoBehaviour, IInteractable
     // Genom interface så byter scen med den som man har valt
     public void Interact(GameObject interactor)
     {
-        DontDestroyOnLoad(interactor);
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadScene(sceneToLoad);
     }
