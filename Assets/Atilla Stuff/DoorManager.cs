@@ -9,6 +9,8 @@ public class DoorManager : MonoBehaviour //manages the door opening sequence
     private int gearsPlaced = 0;
     public GameObject door;
     public List<GearSpinner> gearScripts = new List<GearSpinner>();
+
+    [SerializeField] float doorSpeed = 2f, openYOffset = 4.5f;
     public void GearPlaced() //tracks if gears are placed
     {
         gearsPlaced++;
@@ -37,12 +39,11 @@ public class DoorManager : MonoBehaviour //manages the door opening sequence
 
     System.Collections.IEnumerator SlideDoor() //transforms the door to slide up and stop at a certain position
     {
-        Vector3 openPosition = door.transform.position + new Vector3(0, 4.5f, 0);
-        float speed = 2f;
+        Vector3 openPosition = door.transform.position + new Vector3(0, openYOffset, 0);;
 
         while (Vector3.Distance(door.transform.position, openPosition) > 0.01f)
         {
-            door.transform.position = Vector3.MoveTowards(door.transform.position, openPosition, speed * Time.deltaTime);
+            door.transform.position = Vector3.MoveTowards(door.transform.position, openPosition, doorSpeed * Time.deltaTime);
             yield return null;
         }
     }

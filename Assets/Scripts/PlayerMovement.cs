@@ -25,13 +25,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         ApplySceneMovement();
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnSceneLoaded()
-    {
-        ApplySceneMovement();
     }
 
     void ApplySceneMovement()
